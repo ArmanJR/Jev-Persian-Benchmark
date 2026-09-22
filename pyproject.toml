@@ -1,0 +1,25 @@
+[project]
+name = "jev-persian-benchmark"
+version = "0.1.0"
+description = "A frozen, authored Persian benchmark for Jev"
+requires-python = ">=3.11"
+dependencies = ["typesafe-sdk==0.7.1"]
+
+[project.scripts]
+jev-benchmark = "jev_benchmark.cli:main"
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest==8.4.2", "ruff==0.13.2"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["jev_benchmark"]

@@ -1,0 +1,31 @@
+{
+  "revision": "1.0.0",
+  "review": "Second-pass author review; see data/REVIEW.md",
+  "counts": {
+    "choice": 240,
+    "noul": 160,
+    "score": 80
+  },
+  "repeat_scenarios": [
+    "s017",
+    "s025",
+    "s033",
+    "s041",
+    "s049",
+    "s057",
+    "s065",
+    "s073"
+  ],
+  "thresholds": {
+    "noul": 0.5,
+    "high_confidence": 0.8,
+    "score_tolerance": 0.5
+  },
+  "sha256": {
+    "scenarios.jsonl": "6b2187b7eda5078f57685a39ea5808492a8d698011a471be59355fb68199cac8",
+    "gold.jsonl": "7248399eab685ed032b7572f60ff21669ff4f1241427a099a08f6c3cc0ec5acc",
+    "pairs.json": "99203b7e48b00a3d34cc33ef67a7f81728cb421f96c8b7dd77fddc83bae43d58",
+    "smoke.jsonl": "8b302a1209c79cdc29e2a551a0f2d0629f5e15408febea07cd43f945ada8b6be",
+    "smoke_gold.jsonl": "b6c6f8cb580220444e9fc60cb5b57741d3c854025c9ca533587c5402952c6fbe"
+  }
+}

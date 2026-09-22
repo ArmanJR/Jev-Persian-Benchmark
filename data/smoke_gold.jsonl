@@ -1,0 +1,12 @@
+{"id": "sm001q1", "expected": "A", "rationale": "پریا گوینده است."}
+{"id": "sm001q2", "expected": "B", "rationale": "به قم می‌رود."}
+{"id": "sm001q3", "expected": "C", "rationale": "پیگیری کنید."}
+{"id": "sm001q4", "expected": false, "rationale": "هنوز دریافت نکرده."}
+{"id": "sm001q5", "expected": true, "rationale": "کتاب را خریدم."}
+{"id": "sm001q6", "expected": 1, "rationale": "تا فردا."}
+{"id": "sm002q1", "expected": "D", "rationale": "تشکر بابت تعمیر."}
+{"id": "sm002q2", "expected": "A", "rationale": "چاپگر درست شده."}
+{"id": "sm002q3", "expected": "B", "rationale": "همه برگه‌ها."}
+{"id": "sm002q4", "expected": false, "rationale": "هیچ مشکلی ندارد."}
+{"id": "sm002q5", "expected": true, "rationale": "تشکر و نبود مشکل."}
+{"id": "sm002q6", "expected": 2, "rationale": "هیچ مشکلی باقی نمانده."}

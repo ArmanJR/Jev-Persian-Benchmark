@@ -1,0 +1,386 @@
+[
+  {
+    "id": "p01",
+    "kind": "invariant",
+    "questions": [
+      "s001q1",
+      "s002q1"
+    ]
+  },
+  {
+    "id": "p02",
+    "kind": "invariant",
+    "questions": [
+      "s001q2",
+      "s002q2"
+    ]
+  },
+  {
+    "id": "p03",
+    "kind": "invariant",
+    "questions": [
+      "s001q3",
+      "s002q3"
+    ]
+  },
+  {
+    "id": "p04",
+    "kind": "invariant",
+    "questions": [
+      "s003q1",
+      "s004q1"
+    ]
+  },
+  {
+    "id": "p05",
+    "kind": "invariant",
+    "questions": [
+      "s003q2",
+      "s004q2"
+    ]
+  },
+  {
+    "id": "p06",
+    "kind": "invariant",
+    "questions": [
+      "s003q3",
+      "s004q3"
+    ]
+  },
+  {
+    "id": "p07",
+    "kind": "contrast",
+    "questions": [
+      "s005q1",
+      "s006q1"
+    ]
+  },
+  {
+    "id": "p08",
+    "kind": "contrast",
+    "questions": [
+      "s005q2",
+      "s006q2"
+    ]
+  },
+  {
+    "id": "p09",
+    "kind": "contrast",
+    "questions": [
+      "s005q3",
+      "s006q3"
+    ]
+  },
+  {
+    "id": "p10",
+    "kind": "contrast",
+    "questions": [
+      "s007q1",
+      "s008q1"
+    ]
+  },
+  {
+    "id": "p11",
+    "kind": "contrast",
+    "questions": [
+      "s007q2",
+      "s008q2"
+    ]
+  },
+  {
+    "id": "p12",
+    "kind": "contrast",
+    "questions": [
+      "s007q3",
+      "s008q3"
+    ]
+  },
+  {
+    "id": "p13",
+    "kind": "invariant",
+    "questions": [
+      "s009q1",
+      "s010q1"
+    ]
+  },
+  {
+    "id": "p14",
+    "kind": "invariant",
+    "questions": [
+      "s009q2",
+      "s010q2"
+    ]
+  },
+  {
+    "id": "p15",
+    "kind": "invariant",
+    "questions": [
+      "s009q3",
+      "s010q3"
+    ]
+  },
+  {
+    "id": "p16",
+    "kind": "invariant",
+    "questions": [
+      "s011q1",
+      "s012q1"
+    ]
+  },
+  {
+    "id": "p17",
+    "kind": "invariant",
+    "questions": [
+      "s011q2",
+      "s012q2"
+    ]
+  },
+  {
+    "id": "p18",
+    "kind": "invariant",
+    "questions": [
+      "s011q3",
+      "s012q3"
+    ]
+  },
+  {
+    "id": "p19",
+    "kind": "contrast",
+    "questions": [
+      "s013q1",
+      "s014q1"
+    ]
+  },
+  {
+    "id": "p20",
+    "kind": "contrast",
+    "questions": [
+      "s013q2",
+      "s014q2"
+    ]
+  },
+  {
+    "id": "p21",
+    "kind": "contrast",
+    "questions": [
+      "s013q3",
+      "s014q3"
+    ]
+  },
+  {
+    "id": "p22",
+    "kind": "contrast",
+    "questions": [
+      "s015q1",
+      "s016q1"
+    ]
+  },
+  {
+    "id": "p23",
+    "kind": "contrast",
+    "questions": [
+      "s015q2",
+      "s016q2"
+    ]
+  },
+  {
+    "id": "p24",
+    "kind": "contrast",
+    "questions": [
+      "s015q3",
+      "s016q3"
+    ]
+  },
+  {
+    "id": "p25",
+    "kind": "invariant",
+    "questions": [
+      "s017q1",
+      "s018q1"
+    ]
+  },
+  {
+    "id": "p26",
+    "kind": "invariant",
+    "questions": [
+      "s017q2",
+      "s018q2"
+    ]
+  },
+  {
+    "id": "p27",
+    "kind": "invariant",
+    "questions": [
+      "s017q3",
+      "s018q3"
+    ]
+  },
+  {
+    "id": "p28",
+    "kind": "invariant",
+    "questions": [
+      "s019q1",
+      "s020q1"
+    ]
+  },
+  {
+    "id": "p29",
+    "kind": "invariant",
+    "questions": [
+      "s019q2",
+      "s020q2"
+    ]
+  },
+  {
+    "id": "p30",
+    "kind": "invariant",
+    "questions": [
+      "s019q3",
+      "s020q3"
+    ]
+  },
+  {
+    "id": "p31",
+    "kind": "contrast",
+    "questions": [
+      "s021q1",
+      "s022q1"
+    ]
+  },
+  {
+    "id": "p32",
+    "kind": "contrast",
+    "questions": [
+      "s021q2",
+      "s022q2"
+    ]
+  },
+  {
+    "id": "p33",
+    "kind": "contrast",
+    "questions": [
+      "s021q3",
+      "s022q3"
+    ]
+  },
+  {
+    "id": "p34",
+    "kind": "contrast",
+    "questions": [
+      "s023q1",
+      "s024q1"
+    ]
+  },
+  {
+    "id": "p35",
+    "kind": "contrast",
+    "questions": [
+      "s023q2",
+      "s024q2"
+    ]
+  },
+  {
+    "id": "p36",
+    "kind": "contrast",
+    "questions": [
+      "s023q3",
+      "s024q3"
+    ]
+  },
+  {
+    "id": "p37",
+    "kind": "invariant",
+    "questions": [
+      "s025q1",
+      "s026q1"
+    ]
+  },
+  {
+    "id": "p38",
+    "kind": "invariant",
+    "questions": [
+      "s025q2",
+      "s026q2"
+    ]
+  },
+  {
+    "id": "p39",
+    "kind": "invariant",
+    "questions": [
+      "s025q3",
+      "s026q3"
+    ]
+  },
+  {
+    "id": "p40",
+    "kind": "invariant",
+    "questions": [
+      "s027q1",
+      "s028q1"
+    ]
+  },
+  {
+    "id": "p41",
+    "kind": "invariant",
+    "questions": [
+      "s027q2",
+      "s028q2"
+    ]
+  },
+  {
+    "id": "p42",
+    "kind": "invariant",
+    "questions": [
+      "s027q3",
+      "s028q3"
+    ]
+  },
+  {
+    "id": "p43",
+    "kind": "contrast",
+    "questions": [
+      "s029q1",
+      "s030q1"
+    ]
+  },
+  {
+    "id": "p44",
+    "kind": "contrast",
+    "questions": [
+      "s029q2",
+      "s030q2"
+    ]
+  },
+  {
+    "id": "p45",
+    "kind": "contrast",
+    "questions": [
+      "s029q3",
+      "s030q3"
+    ]
+  },
+  {
+    "id": "p46",
+    "kind": "contrast",
+    "questions": [
+      "s031q1",
+      "s032q1"
+    ]
+  },
+  {
+    "id": "p47",
+    "kind": "contrast",
+    "questions": [
+      "s031q2",
+      "s032q2"
+    ]
+  },
+  {
+    "id": "p48",
+    "kind": "contrast",
+    "questions": [
+      "s031q3",
+      "s032q3"
+    ]
+  }
+]

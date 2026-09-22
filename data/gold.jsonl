@@ -1,0 +1,480 @@
+{"id": "s001q1", "expected": "A", "rationale": "تعویض با سایز بزرگ‌تر خواسته شده."}
+{"id": "s001q2", "expected": "B", "rationale": "سایز بزرگ‌تر درخواست شده."}
+{"id": "s001q3", "expected": "C", "rationale": "گوینده پولش را پس نمی‌خواهد."}
+{"id": "s001q4", "expected": true, "rationale": "درخواست صریح تعویض است."}
+{"id": "s001q5", "expected": false, "rationale": "رنگ را خوب می‌داند."}
+{"id": "s001q6", "expected": 0, "rationale": "صریحاً عجله ندارد."}
+{"id": "s002q1", "expected": "A", "rationale": "تعویض با سایز بزرگ‌تر خواسته شده."}
+{"id": "s002q2", "expected": "B", "rationale": "سایز بزرگ‌تر درخواست شده."}
+{"id": "s002q3", "expected": "C", "rationale": "گوینده پولش را پس نمی‌خواهد."}
+{"id": "s002q4", "expected": true, "rationale": "درخواست صریح تعویض است."}
+{"id": "s002q5", "expected": false, "rationale": "رنگ را خوب می‌داند."}
+{"id": "s002q6", "expected": 0, "rationale": "صریحاً عجله ندارد."}
+{"id": "s003q1", "expected": "D", "rationale": "رمز فراموش شده است."}
+{"id": "s003q2", "expected": "D", "rationale": "لینک بازیابی خواسته شده."}
+{"id": "s003q3", "expected": "A", "rationale": "مشکل دسترسی به حساب است."}
+{"id": "s003q4", "expected": true, "rationale": "فراموشی رمز بیان شده."}
+{"id": "s003q5", "expected": false, "rationale": "مشکل پرداخت رد شده."}
+{"id": "s003q6", "expected": 1, "rationale": "تا آخر هفته لازم دارد."}
+{"id": "s004q1", "expected": "D", "rationale": "رمز فراموش شده است."}
+{"id": "s004q2", "expected": "D", "rationale": "لینک بازیابی خواسته شده."}
+{"id": "s004q3", "expected": "A", "rationale": "مشکل دسترسی به حساب است."}
+{"id": "s004q4", "expected": true, "rationale": "فراموشی رمز بیان شده."}
+{"id": "s004q5", "expected": false, "rationale": "مشکل پرداخت رد شده."}
+{"id": "s004q6", "expected": 1, "rationale": "تا آخر هفته لازم دارد."}
+{"id": "s005q1", "expected": "B", "rationale": "لغو ارسال صریح است."}
+{"id": "s005q2", "expected": "B", "rationale": "برگرداندن پول خواسته شده."}
+{"id": "s005q3", "expected": "B", "rationale": "دیگر کالا را نمی‌خواهد."}
+{"id": "s005q4", "expected": true, "rationale": "دیگر کالا را نمی‌خواهد."}
+{"id": "s005q5", "expected": false, "rationale": "آدرسی مطرح نیست."}
+{"id": "s005q6", "expected": 2, "rationale": "امروز خواسته شده."}
+{"id": "s006q1", "expected": "C", "rationale": "لغو ارسال نهی شده."}
+{"id": "s006q2", "expected": "C", "rationale": "برنگرداندن پول خواسته شده."}
+{"id": "s006q3", "expected": "C", "rationale": "همچنان کالا را می‌خواهد."}
+{"id": "s006q4", "expected": false, "rationale": "کالا را می‌خواهد."}
+{"id": "s006q5", "expected": true, "rationale": "لغو نکنید یعنی ادامه ارسال."}
+{"id": "s006q6", "expected": 2, "rationale": "امروز خواسته شده."}
+{"id": "s007q1", "expected": "D", "rationale": "ارسال فاکتور درخواست شده."}
+{"id": "s007q2", "expected": "C", "rationale": "ایمیل کنید."}
+{"id": "s007q3", "expected": "A", "rationale": "تماس نگیرید."}
+{"id": "s007q4", "expected": true, "rationale": "فاکتور خواسته شده."}
+{"id": "s007q5", "expected": false, "rationale": "تماس منع شده."}
+{"id": "s007q6", "expected": 0, "rationale": "هر وقت فرصت شد گفته شده."}
+{"id": "s008q1", "expected": "A", "rationale": "پرسش درباره موجودی است."}
+{"id": "s008q2", "expected": "D", "rationale": "تلفن بزنید."}
+{"id": "s008q3", "expected": "B", "rationale": "ایمیل نفرستید."}
+{"id": "s008q4", "expected": false, "rationale": "موجودی خواسته شده."}
+{"id": "s008q5", "expected": true, "rationale": "تلفن بزنید."}
+{"id": "s008q6", "expected": 0, "rationale": "هر وقت فرصت شد گفته شده."}
+{"id": "s009q1", "expected": "A", "rationale": "همه ارزیابی‌ها مثبت‌اند."}
+{"id": "s009q2", "expected": "B", "rationale": "عالی توصیف شده."}
+{"id": "s009q3", "expected": "C", "rationale": "دوباره می‌خرم."}
+{"id": "s009q4", "expected": true, "rationale": "راضی‌ام گفته شده."}
+{"id": "s009q5", "expected": false, "rationale": "کالا را عالی می‌داند."}
+{"id": "s009q6", "expected": 2, "rationale": "رضایت روشن و بدون شکایت."}
+{"id": "s010q1", "expected": "A", "rationale": "همه ارزیابی‌ها مثبت‌اند."}
+{"id": "s010q2", "expected": "B", "rationale": "عالی توصیف شده."}
+{"id": "s010q3", "expected": "C", "rationale": "دوباره می‌خرم."}
+{"id": "s010q4", "expected": true, "rationale": "راضی‌ام گفته شده."}
+{"id": "s010q5", "expected": false, "rationale": "کالا را عالی می‌داند."}
+{"id": "s010q6", "expected": 2, "rationale": "رضایت روشن و بدون شکایت."}
+{"id": "s011q1", "expected": "D", "rationale": "کیفیت مثبت و تحویل منفی است."}
+{"id": "s011q2", "expected": "D", "rationale": "تحویل افتضاح توصیف شده."}
+{"id": "s011q3", "expected": "A", "rationale": "فقط با ارسال بهتر."}
+{"id": "s011q4", "expected": true, "rationale": "کیفیت خوب است."}
+{"id": "s011q5", "expected": false, "rationale": "تحویل افتضاح است."}
+{"id": "s011q6", "expected": 1, "rationale": "دو ارزیابی مخالف وجود دارد."}
+{"id": "s012q1", "expected": "D", "rationale": "کیفیت مثبت و تحویل منفی است."}
+{"id": "s012q2", "expected": "D", "rationale": "تحویل افتضاح توصیف شده."}
+{"id": "s012q3", "expected": "A", "rationale": "فقط با ارسال بهتر."}
+{"id": "s012q4", "expected": true, "rationale": "کیفیت خوب است."}
+{"id": "s012q5", "expected": false, "rationale": "تحویل افتضاح است."}
+{"id": "s012q6", "expected": 1, "rationale": "دو ارزیابی مخالف وجود دارد."}
+{"id": "s013q1", "expected": "B", "rationale": "موافقم."}
+{"id": "s013q2", "expected": "B", "rationale": "خوشحالم."}
+{"id": "s013q3", "expected": "B", "rationale": "به نفع دانشجوهاست."}
+{"id": "s013q4", "expected": true, "rationale": "موافق است."}
+{"id": "s013q5", "expected": false, "rationale": "به نفع می‌داند."}
+{"id": "s013q6", "expected": 2, "rationale": "حمایت و خوشحالی."}
+{"id": "s014q1", "expected": "C", "rationale": "مخالفم."}
+{"id": "s014q2", "expected": "C", "rationale": "ناراحتم."}
+{"id": "s014q3", "expected": "C", "rationale": "به ضرر دانشجوهاست."}
+{"id": "s014q4", "expected": false, "rationale": "مخالف است."}
+{"id": "s014q5", "expected": true, "rationale": "به ضرر می‌داند."}
+{"id": "s014q6", "expected": 0, "rationale": "مخالفت و ناراحتی."}
+{"id": "s015q1", "expected": "D", "rationale": "گوینده تصریح می‌کند انتقاد است."}
+{"id": "s015q2", "expected": "C", "rationale": "باز جواب ندادند."}
+{"id": "s015q3", "expected": "A", "rationale": "از بی‌پاسخی انتقاد می‌کند."}
+{"id": "s015q4", "expected": true, "rationale": "انتقاد صریحاً مشخص شده."}
+{"id": "s015q5", "expected": false, "rationale": "جواب ندادند."}
+{"id": "s015q6", "expected": 0, "rationale": "انتقاد از بی‌پاسخی."}
+{"id": "s016q1", "expected": "A", "rationale": "گوینده تصریح می‌کند تعریف است."}
+{"id": "s016q2", "expected": "D", "rationale": "بار اول جواب دادند."}
+{"id": "s016q3", "expected": "B", "rationale": "از پاسخ سریع تعریف می‌کند."}
+{"id": "s016q4", "expected": false, "rationale": "تعریف واقعی است."}
+{"id": "s016q5", "expected": true, "rationale": "جواب دادند."}
+{"id": "s016q6", "expected": 2, "rationale": "تعریف از پاسخ‌گویی."}
+{"id": "s017q1", "expected": "A", "rationale": "مینا کتاب را به سارا داده."}
+{"id": "s017q2", "expected": "B", "rationale": "از لیلا گرفت."}
+{"id": "s017q3", "expected": "C", "rationale": "محل بیان نشده."}
+{"id": "s017q4", "expected": true, "rationale": "کتاب به سارا داده شد."}
+{"id": "s017q5", "expected": false, "rationale": "محل دیدار معلوم نیست."}
+{"id": "s017q6", "expected": 2, "rationale": "دادن کتاب به سارا صریح است."}
+{"id": "s018q1", "expected": "A", "rationale": "مینا کتاب را به سارا داده."}
+{"id": "s018q2", "expected": "B", "rationale": "از لیلا گرفت."}
+{"id": "s018q3", "expected": "C", "rationale": "محل بیان نشده."}
+{"id": "s018q4", "expected": true, "rationale": "کتاب به سارا داده شد."}
+{"id": "s018q5", "expected": false, "rationale": "محل دیدار معلوم نیست."}
+{"id": "s018q6", "expected": 2, "rationale": "دادن کتاب به سارا صریح است."}
+{"id": "s019q1", "expected": "D", "rationale": "سه‌شنبه ذکر شده."}
+{"id": "s019q2", "expected": "D", "rationale": "هزینه اعلام نشده، پس رایگان بودن هم معلوم نیست."}
+{"id": "s019q3", "expected": "A", "rationale": "ثبت‌نام بسته است."}
+{"id": "s019q4", "expected": true, "rationale": "محل صریح است."}
+{"id": "s019q5", "expected": false, "rationale": "هزینه نیامده است."}
+{"id": "s019q6", "expected": 1, "rationale": "سکوت درباره هزینه، نه رد و نه تأیید."}
+{"id": "s020q1", "expected": "D", "rationale": "سه‌شنبه ذکر شده."}
+{"id": "s020q2", "expected": "D", "rationale": "هزینه اعلام نشده، پس رایگان بودن هم معلوم نیست."}
+{"id": "s020q3", "expected": "A", "rationale": "ثبت‌نام بسته است."}
+{"id": "s020q4", "expected": true, "rationale": "محل صریح است."}
+{"id": "s020q5", "expected": false, "rationale": "هزینه نیامده است."}
+{"id": "s020q6", "expected": 1, "rationale": "سکوت درباره هزینه، نه رد و نه تأیید."}
+{"id": "s021q1", "expected": "B", "rationale": "ندا می‌گوید شیراز می‌رود."}
+{"id": "s021q2", "expected": "B", "rationale": "امید می‌ماند."}
+{"id": "s021q3", "expected": "B", "rationale": "میزبان مهساست."}
+{"id": "s021q4", "expected": true, "rationale": "ندا می‌رود."}
+{"id": "s021q5", "expected": false, "rationale": "امید تهران می‌ماند."}
+{"id": "s021q6", "expected": 2, "rationale": "سفر ندا صریح است."}
+{"id": "s022q1", "expected": "C", "rationale": "امید می‌گوید شیراز می‌رود."}
+{"id": "s022q2", "expected": "C", "rationale": "ندا می‌ماند."}
+{"id": "s022q3", "expected": "C", "rationale": "میزبان رضاست."}
+{"id": "s022q4", "expected": false, "rationale": "ندا تهران می‌ماند."}
+{"id": "s022q5", "expected": true, "rationale": "امید می‌رود."}
+{"id": "s022q6", "expected": 0, "rationale": "ندا در تهران می‌ماند."}
+{"id": "s023q1", "expected": "D", "rationale": "قطار رسید."}
+{"id": "s023q2", "expected": "C", "rationale": "اتوبوس نرسیده."}
+{"id": "s023q3", "expected": "A", "rationale": "در سالن منتظرند."}
+{"id": "s023q4", "expected": true, "rationale": "قطار رسیده."}
+{"id": "s023q5", "expected": false, "rationale": "هنوز نرسیده."}
+{"id": "s023q6", "expected": 2, "rationale": "رسیدن قطار صریح است."}
+{"id": "s024q1", "expected": "A", "rationale": "اتوبوس رسید."}
+{"id": "s024q2", "expected": "D", "rationale": "قطار نرسیده."}
+{"id": "s024q3", "expected": "B", "rationale": "بیرون منتظرند."}
+{"id": "s024q4", "expected": false, "rationale": "هنوز نرسیده."}
+{"id": "s024q5", "expected": true, "rationale": "اتوبوس رسیده."}
+{"id": "s024q6", "expected": 0, "rationale": "نرسیدن قطار صریح است."}
+{"id": "s025q1", "expected": "A", "rationale": "هیچ وجهی برنگشته."}
+{"id": "s025q2", "expected": "B", "rationale": "زمانش را نگفته‌اند."}
+{"id": "s025q3", "expected": "C", "rationale": "فقط پیگیری کنید."}
+{"id": "s025q4", "expected": false, "rationale": "هیچ وجهی برنگشته."}
+{"id": "s025q5", "expected": true, "rationale": "قول داده‌اند."}
+{"id": "s025q6", "expected": 0, "rationale": "صریحاً وجه نرسیده."}
+{"id": "s026q1", "expected": "A", "rationale": "هیچ وجهی برنگشته."}
+{"id": "s026q2", "expected": "B", "rationale": "زمانش را نگفته‌اند."}
+{"id": "s026q3", "expected": "C", "rationale": "فقط پیگیری کنید."}
+{"id": "s026q4", "expected": false, "rationale": "هیچ وجهی برنگشته."}
+{"id": "s026q5", "expected": true, "rationale": "قول داده‌اند."}
+{"id": "s026q6", "expected": 0, "rationale": "صریحاً وجه نرسیده."}
+{"id": "s027q1", "expected": "D", "rationale": "آبی نیست؛ شرط لغو برقرار است."}
+{"id": "s027q2", "expected": "D", "rationale": "فقط اگر آبی موجود بود."}
+{"id": "s027q3", "expected": "A", "rationale": "جایگزین نمی‌خواهد."}
+{"id": "s027q4", "expected": false, "rationale": "جایگزین رد شده."}
+{"id": "s027q5", "expected": true, "rationale": "آبی موجود نیست."}
+{"id": "s027q6", "expected": 0, "rationale": "فقط قرمز موجود است، پس سبز موجود نیست."}
+{"id": "s028q1", "expected": "D", "rationale": "آبی نیست؛ شرط لغو برقرار است."}
+{"id": "s028q2", "expected": "D", "rationale": "فقط اگر آبی موجود بود."}
+{"id": "s028q3", "expected": "A", "rationale": "جایگزین نمی‌خواهد."}
+{"id": "s028q4", "expected": false, "rationale": "جایگزین رد شده."}
+{"id": "s028q5", "expected": true, "rationale": "آبی موجود نیست."}
+{"id": "s028q6", "expected": 0, "rationale": "فقط قرمز موجود است، پس سبز موجود نیست."}
+{"id": "s029q1", "expected": "B", "rationale": "کارمند و دارای کارت است."}
+{"id": "s029q2", "expected": "B", "rationale": "کارت دارد."}
+{"id": "s029q3", "expected": "B", "rationale": "تأیید کنید."}
+{"id": "s029q4", "expected": true, "rationale": "هر دو شرط برقرار است."}
+{"id": "s029q5", "expected": false, "rationale": "کارمند است."}
+{"id": "s029q6", "expected": 2, "rationale": "کارت دارد."}
+{"id": "s030q1", "expected": "C", "rationale": "شرط کارت برقرار نیست."}
+{"id": "s030q2", "expected": "C", "rationale": "کارت ندارد."}
+{"id": "s030q3", "expected": "C", "rationale": "رد کنید."}
+{"id": "s030q4", "expected": false, "rationale": "کارت ندارد."}
+{"id": "s030q5", "expected": true, "rationale": "کارمند است."}
+{"id": "s030q6", "expected": 0, "rationale": "کارت ندارد."}
+{"id": "s031q1", "expected": "D", "rationale": "آخرین دستور جمعه است."}
+{"id": "s031q2", "expected": "C", "rationale": "جمعه عصر."}
+{"id": "s031q3", "expected": "A", "rationale": "پنجشنبه نیایید."}
+{"id": "s031q4", "expected": false, "rationale": "نظر تغییر کرده."}
+{"id": "s031q5", "expected": true, "rationale": "جمعه عصر."}
+{"id": "s031q6", "expected": 0, "rationale": "روز نهایی جمعه است."}
+{"id": "s032q1", "expected": "A", "rationale": "آخرین دستور پنجشنبه است."}
+{"id": "s032q2", "expected": "D", "rationale": "پنجشنبه صبح."}
+{"id": "s032q3", "expected": "B", "rationale": "جمعه نیایید."}
+{"id": "s032q4", "expected": false, "rationale": "پنجشنبه صبح."}
+{"id": "s032q5", "expected": true, "rationale": "نظرم عوض شد."}
+{"id": "s032q6", "expected": 0, "rationale": "روز نهایی پنجشنبه است."}
+{"id": "s033q1", "expected": "A", "rationale": "به خاطر کمک موفق تشکر می‌کند."}
+{"id": "s033q2", "expected": "B", "rationale": "مشکل ثبت‌نام کامل حل شده."}
+{"id": "s033q3", "expected": "C", "rationale": "هم تشکر و هم حل مشکل بیان شده."}
+{"id": "s033q4", "expected": true, "rationale": "کمک مشکل را حل کرده."}
+{"id": "s033q5", "expected": false, "rationale": "این عبارت تشکر است."}
+{"id": "s033q6", "expected": 2, "rationale": "کامل حل کرد."}
+{"id": "s034q1", "expected": "D", "rationale": "اصطلاح آسان بودن است."}
+{"id": "s034q2", "expected": "A", "rationale": "برای من خیلی سخت بود."}
+{"id": "s034q3", "expected": "B", "rationale": "نتوانست تحویل دهد."}
+{"id": "s034q4", "expected": false, "rationale": "نتونستم تحویل بدم."}
+{"id": "s034q5", "expected": true, "rationale": "برای او سخت بوده."}
+{"id": "s034q6", "expected": 2, "rationale": "سخت بود و تحویل نشد."}
+{"id": "s035q1", "expected": "C", "rationale": "با شوق کار کرده."}
+{"id": "s035q2", "expected": "D", "rationale": "گزارش نوشته شد."}
+{"id": "s035q3", "expected": "A", "rationale": "تمومش کردم."}
+{"id": "s035q4", "expected": false, "rationale": "با شوق کار کرد."}
+{"id": "s035q5", "expected": true, "rationale": "تمومش کردم."}
+{"id": "s035q6", "expected": 2, "rationale": "با شوق نشسته است."}
+{"id": "s036q1", "expected": "B", "rationale": "اعتراض به تأخیر و بی‌خبری است."}
+{"id": "s036q2", "expected": "C", "rationale": "دیر کرده و خبر نداده."}
+{"id": "s036q3", "expected": "D", "rationale": "خیلی عصبانی‌ام."}
+{"id": "s036q4", "expected": false, "rationale": "اصطلاح درباره رفتار است."}
+{"id": "s036q5", "expected": true, "rationale": "حتی خبر ندادی."}
+{"id": "s036q6", "expected": 2, "rationale": "خیلی عصبانی‌ام."}
+{"id": "s037q1", "expected": "A", "rationale": "پیگیری تخفیف را کنار گذاشته."}
+{"id": "s037q2", "expected": "B", "rationale": "قیمت عادی را می‌دهد."}
+{"id": "s037q3", "expected": "C", "rationale": "دیگه دنبالش نمی‌رم."}
+{"id": "s037q4", "expected": false, "rationale": "پیگیری را رها کرده."}
+{"id": "s037q5", "expected": true, "rationale": "قیمت عادی رو می‌دم."}
+{"id": "s037q6", "expected": 0, "rationale": "از خیر تخفیف گذشته."}
+{"id": "s038q1", "expected": "D", "rationale": "تا خبر بعدی نباید سفارش داد."}
+{"id": "s038q2", "expected": "A", "rationale": "تا من خبر بدم."}
+{"id": "s038q3", "expected": "B", "rationale": "هنوز تصمیم نگرفتم."}
+{"id": "s038q4", "expected": false, "rationale": "سفارش رو نزن."}
+{"id": "s038q5", "expected": true, "rationale": "تا من خبر بدم."}
+{"id": "s038q6", "expected": 0, "rationale": "صریحاً تصمیم نگرفته."}
+{"id": "s039q1", "expected": "C", "rationale": "می‌خواهد حرفش بد فهمیده نشود."}
+{"id": "s039q2", "expected": "D", "rationale": "فقط فونت تیتر."}
+{"id": "s039q3", "expected": "A", "rationale": "بقیه‌اش خوبه."}
+{"id": "s039q4", "expected": false, "rationale": "فقط یک تغییر خواسته."}
+{"id": "s039q5", "expected": true, "rationale": "فقط فونت تیتر."}
+{"id": "s039q6", "expected": 1, "rationale": "فقط فونت تیتر عوض شود."}
+{"id": "s040q1", "expected": "B", "rationale": "اشاره به مشغله دارد."}
+{"id": "s040q2", "expected": "C", "rationale": "فقط بخش اول را می‌بیند."}
+{"id": "s040q3", "expected": "D", "rationale": "اگه فایل رو بفرستی."}
+{"id": "s040q4", "expected": false, "rationale": "بخش اول را بررسی می‌کند."}
+{"id": "s040q5", "expected": true, "rationale": "اگر فایل را بفرستی."}
+{"id": "s040q6", "expected": 1, "rationale": "فقط بخش اول."}
+{"id": "s041q1", "expected": "A", "rationale": "نمی‌خورم با دلیل صریح همراه است."}
+{"id": "s041q2", "expected": "B", "rationale": "نباید دوباره تعارف کند."}
+{"id": "s041q3", "expected": "C", "rationale": "دکتر گفته نخورم."}
+{"id": "s041q4", "expected": true, "rationale": "واقعاً نمی‌خورد و اصرار منع شده."}
+{"id": "s041q5", "expected": false, "rationale": "چای نمی‌خورم."}
+{"id": "s041q6", "expected": 2, "rationale": "نمی‌خورم و دلیل پزشکی را گفته."}
+{"id": "s042q1", "expected": "D", "rationale": "می‌شه پنجره رو ببندی؟"}
+{"id": "s042q2", "expected": "A", "rationale": "اینجا خیلی سرده."}
+{"id": "s042q3", "expected": "B", "rationale": "با می‌شه پرسیده شده."}
+{"id": "s042q4", "expected": false, "rationale": "بستن پنجره را هم می‌خواهد."}
+{"id": "s042q5", "expected": true, "rationale": "رو به کنارپنجره‌ای گفته."}
+{"id": "s042q6", "expected": 2, "rationale": "بستن پنجره نام برده شده."}
+{"id": "s043q1", "expected": "C", "rationale": "نمی‌رسد بیاید."}
+{"id": "s043q2", "expected": "D", "rationale": "جمعه شیفتم."}
+{"id": "s043q3", "expected": "A", "rationale": "تشکر پیش از رد دعوت است."}
+{"id": "s043q4", "expected": false, "rationale": "نمی‌رسم بیام."}
+{"id": "s043q5", "expected": true, "rationale": "خیلی لطف داری."}
+{"id": "s043q6", "expected": 0, "rationale": "صریحاً نمی‌آید."}
+{"id": "s044q1", "expected": "B", "rationale": "قیمت همچنان برقرار است."}
+{"id": "s044q2", "expected": "C", "rationale": "قیمتش همون دویست هزار تومنه."}
+{"id": "s044q3", "expected": "D", "rationale": "مشتری هنوز پول نداده."}
+{"id": "s044q4", "expected": false, "rationale": "قیمت صریحاً حفظ شده."}
+{"id": "s044q5", "expected": true, "rationale": "دویست هزار تومان."}
+{"id": "s044q6", "expected": 0, "rationale": "تعارف با قیمت همراه است."}
+{"id": "s045q1", "expected": "A", "rationale": "خواهشمند است و ارسال فرمایید رسمی‌اند."}
+{"id": "s045q2", "expected": "B", "rationale": "نسخه نهایی گزارش."}
+{"id": "s045q3", "expected": "C", "rationale": "تا فردا."}
+{"id": "s045q4", "expected": true, "rationale": "ارسال فرمایید."}
+{"id": "s045q5", "expected": false, "rationale": "نسخه نهایی خواسته شده."}
+{"id": "s045q6", "expected": 1, "rationale": "مهلت فرداست."}
+{"id": "s046q1", "expected": "D", "rationale": "یه کم کم کنید."}
+{"id": "s046q2", "expected": "A", "rationale": "دارم درس می‌خونم."}
+{"id": "s046q3", "expected": "B", "rationale": "ببخشید و اگه امکانش هست."}
+{"id": "s046q4", "expected": true, "rationale": "کم کنید."}
+{"id": "s046q5", "expected": false, "rationale": "درخواست مؤدبانه و بی‌تهدید است."}
+{"id": "s046q6", "expected": 1, "rationale": "یه کم کم کنید."}
+{"id": "s047q1", "expected": "C", "rationale": "قبل از تأیید باید اصلاح شود."}
+{"id": "s047q2", "expected": "D", "rationale": "رنگ‌هاش اصلاح بشه."}
+{"id": "s047q3", "expected": "A", "rationale": "پس از آن شرط اصلاح آمده."}
+{"id": "s047q4", "expected": false, "rationale": "اصلاح قبل از تأیید لازم است."}
+{"id": "s047q5", "expected": true, "rationale": "اصلاح رنگ‌ها."}
+{"id": "s047q6", "expected": 1, "rationale": "اصلاح لازم است."}
+{"id": "s048q1", "expected": "B", "rationale": "خودش انجام می‌دهد."}
+{"id": "s048q2", "expected": "C", "rationale": "اگر گیر کردم بهت می‌گم."}
+{"id": "s048q3", "expected": "D", "rationale": "مرسی همراه با استقلال در انجام کار."}
+{"id": "s048q4", "expected": true, "rationale": "اگر گیر کند می‌گوید."}
+{"id": "s048q5", "expected": false, "rationale": "شرط کمک آینده را گفته."}
+{"id": "s048q6", "expected": 0, "rationale": "خودم انجامش می‌دم."}
+{"id": "s049q1", "expected": "A", "rationale": "اختلال هست اما CSV جایگزین است."}
+{"id": "s049q2", "expected": "B", "rationale": "با CSV کار انجام می‌شود."}
+{"id": "s049q3", "expected": "C", "rationale": "PDF خراب است."}
+{"id": "s049q4", "expected": false, "rationale": "CSV راه جایگزین است."}
+{"id": "s049q5", "expected": true, "rationale": "یک قابلیت خروجی خراب است."}
+{"id": "s049q6", "expected": 1, "rationale": "CSV امکان ادامه کار می‌دهد."}
+{"id": "s050q1", "expected": "D", "rationale": "شماره سفارش موجود نیست."}
+{"id": "s050q2", "expected": "A", "rationale": "شماره سفارش را ندارد."}
+{"id": "s050q3", "expected": "B", "rationale": "پولم برنگشته."}
+{"id": "s050q4", "expected": false, "rationale": "شماره لازم است."}
+{"id": "s050q5", "expected": true, "rationale": "شماره وجود ندارد."}
+{"id": "s050q6", "expected": 0, "rationale": "شماره را ندارد."}
+{"id": "s051q1", "expected": "C", "rationale": "تأخیر بدون شکستگی."}
+{"id": "s051q2", "expected": "D", "rationale": "بسته دیر رسید."}
+{"id": "s051q3", "expected": "A", "rationale": "هیچ شکستگی ندارد."}
+{"id": "s051q4", "expected": false, "rationale": "شکستگی ندارد."}
+{"id": "s051q5", "expected": true, "rationale": "دیر رسیده و نشکسته."}
+{"id": "s051q6", "expected": 1, "rationale": "تأخیر بدون شکستگی."}
+{"id": "s052q1", "expected": "B", "rationale": "شدید اعلام شده و قاعده اتصال فوری است."}
+{"id": "s052q2", "expected": "C", "rationale": "درد شدید است."}
+{"id": "s052q3", "expected": "D", "rationale": "صرفاً صف تماس است."}
+{"id": "s052q4", "expected": false, "rationale": "درد شدید گزارش شده."}
+{"id": "s052q5", "expected": true, "rationale": "قاعده صریح است."}
+{"id": "s052q6", "expected": 2, "rationale": "درد شدید اعلام شده."}
+{"id": "s053q1", "expected": "A", "rationale": "خواننده فقط مشاهده می‌کند."}
+{"id": "s053q2", "expected": "B", "rationale": "نقش خواننده است."}
+{"id": "s053q3", "expected": "C", "rationale": "مدیر حذف هم می‌تواند."}
+{"id": "s053q4", "expected": false, "rationale": "فقط مشاهده دارد."}
+{"id": "s053q5", "expected": true, "rationale": "صریحاً ذکر شده."}
+{"id": "s053q6", "expected": 0, "rationale": "خواننده است."}
+{"id": "s054q1", "expected": "D", "rationale": "استثنای معیوب بودن برقرار است."}
+{"id": "s054q2", "expected": "A", "rationale": "باز شده و معیوب است."}
+{"id": "s054q3", "expected": "B", "rationale": "جعبه باز شده."}
+{"id": "s054q4", "expected": false, "rationale": "برای معیوب استثنا هست."}
+{"id": "s054q5", "expected": true, "rationale": "کالا معیوب است."}
+{"id": "s054q6", "expected": 2, "rationale": "هر دو جزء استثنا معلوم است."}
+{"id": "s055q1", "expected": "C", "rationale": "رضایت ثبت نشده."}
+{"id": "s055q2", "expected": "D", "rationale": "وضعیت ثبت نشده نه موافقت و نه مخالفت."}
+{"id": "s055q3", "expected": "A", "rationale": "فقط کاربران رضایت‌داده."}
+{"id": "s055q4", "expected": false, "rationale": "صریحاً چنین نیست."}
+{"id": "s055q5", "expected": true, "rationale": "شرط ارسال احراز نشده."}
+{"id": "s055q6", "expected": 1, "rationale": "ثبت نشده."}
+{"id": "s056q1", "expected": "B", "rationale": "تغییر رنگ بدون اختلال."}
+{"id": "s056q2", "expected": "C", "rationale": "دکمه خاکستری شده."}
+{"id": "s056q3", "expected": "D", "rationale": "مثل قبل کار می‌کند."}
+{"id": "s056q4", "expected": false, "rationale": "عملکرد برقرار است."}
+{"id": "s056q5", "expected": true, "rationale": "فقط رنگ تغییر کرده."}
+{"id": "s056q6", "expected": 0, "rationale": "دکمه کار می‌کند."}
+{"id": "s057q1", "expected": "A", "rationale": "نقد متوجه برنامه است."}
+{"id": "s057q2", "expected": "B", "rationale": "این برنامه پر از باگ است."}
+{"id": "s057q3", "expected": "C", "rationale": "لطفاً درستش کنید."}
+{"id": "s057q4", "expected": false, "rationale": "هیچ تهدیدی نیست."}
+{"id": "s057q5", "expected": true, "rationale": "نقد محصول مجاز است."}
+{"id": "s057q6", "expected": 0, "rationale": "فقط نقد محصول است."}
+{"id": "s058q1", "expected": "D", "rationale": "بی‌عرضه خطاب به شخص است."}
+{"id": "s058q2", "expected": "A", "rationale": "پیام به همکار است."}
+{"id": "s058q3", "expected": "B", "rationale": "تحقیر شخص ممنوع است."}
+{"id": "s058q4", "expected": false, "rationale": "توانایی شخص را تحقیر می‌کند."}
+{"id": "s058q5", "expected": true, "rationale": "بی‌عرضه‌ای هستی."}
+{"id": "s058q6", "expected": 1, "rationale": "توهین هست ولی تهدید آسیب نیست."}
+{"id": "s059q1", "expected": "C", "rationale": "اگر بیایی می‌زنمت."}
+{"id": "s059q2", "expected": "D", "rationale": "اگر دوباره اینجا بیایی."}
+{"id": "s059q3", "expected": "A", "rationale": "صریحاً نقل‌قول نیست."}
+{"id": "s059q4", "expected": true, "rationale": "می‌زنمت."}
+{"id": "s059q5", "expected": false, "rationale": "وعده آسیب همچنان تهدید است."}
+{"id": "s059q6", "expected": 2, "rationale": "وعده زدن است."}
+{"id": "s060q1", "expected": "B", "rationale": "تهدید دیگری را گزارش می‌کند."}
+{"id": "s060q2", "expected": "C", "rationale": "کسی گفت."}
+{"id": "s060q3", "expected": "D", "rationale": "از آن حمایت نمی‌کنم."}
+{"id": "s060q4", "expected": true, "rationale": "می‌زنمت نقل شده."}
+{"id": "s060q5", "expected": false, "rationale": "گزارش بی‌طرفانه است."}
+{"id": "s060q6", "expected": 0, "rationale": "گزارشگر حمایت نمی‌کند."}
+{"id": "s061q1", "expected": "A", "rationale": "تو احمقی توهین مستقیم است."}
+{"id": "s061q2", "expected": "B", "rationale": "در متن قابل بررسی آمده است."}
+{"id": "s061q3", "expected": "C", "rationale": "تحقیر مستقیم مخاطب است."}
+{"id": "s061q4", "expected": false, "rationale": "متن داده است نه دستور ارزیاب."}
+{"id": "s061q5", "expected": true, "rationale": "تو احمقی."}
+{"id": "s061q6", "expected": 1, "rationale": "توهین هست؛ تهدید نیست."}
+{"id": "s062q1", "expected": "D", "rationale": "شکایت رسمی مجاز است."}
+{"id": "s062q2", "expected": "A", "rationale": "از مسیر رسمی شکایت می‌کند."}
+{"id": "s062q3", "expected": "B", "rationale": "اگر وجه را برنگردانید."}
+{"id": "s062q4", "expected": false, "rationale": "شکایت رسمی است."}
+{"id": "s062q5", "expected": true, "rationale": "اعلام شکایت رسمی مجاز است."}
+{"id": "s062q6", "expected": 0, "rationale": "شکایت رسمی تخلف نیست."}
+{"id": "s063q1", "expected": "C", "rationale": "به سؤال نشانی پاسخ داده."}
+{"id": "s063q2", "expected": "D", "rationale": "فروشگاه شما کجاست؟"}
+{"id": "s063q3", "expected": "A", "rationale": "مدیر همان فروشگاه."}
+{"id": "s063q4", "expected": false, "rationale": "عضو صریحاً پرسیده."}
+{"id": "s063q5", "expected": true, "rationale": "پرسش و پاسخ هر دو نشانی‌اند."}
+{"id": "s063q6", "expected": 2, "rationale": "فقط نشانی را پاسخ داده."}
+{"id": "s064q1", "expected": "B", "rationale": "درس درباره واژه است."}
+{"id": "s064q2", "expected": "C", "rationale": "ذکر آموزشی بدون هدف شخصی مجاز است."}
+{"id": "s064q3", "expected": "D", "rationale": "بهتر است کسی را چنین خطاب نکنیم."}
+{"id": "s064q4", "expected": true, "rationale": "واژه احمق ذکر شده."}
+{"id": "s064q5", "expected": false, "rationale": "صرفاً آموزش است."}
+{"id": "s064q6", "expected": 0, "rationale": "هیچ هدف شخصی وجود ندارد."}
+{"id": "s065q1", "expected": "A", "rationale": "تغییر زمان بدون لغو."}
+{"id": "s065q2", "expected": "B", "rationale": "لغو نکرد با لغو شد متضاد است."}
+{"id": "s065q3", "expected": "C", "rationale": "محل گفته نشده."}
+{"id": "s065q4", "expected": true, "rationale": "به عصر تغییر داده."}
+{"id": "s065q5", "expected": false, "rationale": "محل ذکر نشده."}
+{"id": "s065q6", "expected": 1, "rationale": "محل نامعلوم است."}
+{"id": "s066q1", "expected": "D", "rationale": "تنها راه ایمیل است."}
+{"id": "s066q2", "expected": "A", "rationale": "تماس تلفنی صریحاً رد شده."}
+{"id": "s066q3", "expected": "B", "rationale": "آدرس مشخص نداده."}
+{"id": "s066q4", "expected": false, "rationale": "تماس تلفنی نداریم."}
+{"id": "s066q5", "expected": true, "rationale": "تنها راه ایمیل."}
+{"id": "s066q6", "expected": 0, "rationale": "نداشتن تلفن صریح است."}
+{"id": "s067q1", "expected": "C", "rationale": "الف درباره رسیدن است."}
+{"id": "s067q2", "expected": "D", "rationale": "قیمت بلیت."}
+{"id": "s067q3", "expected": "A", "rationale": "تأخیر یعنی دیر رسیدن."}
+{"id": "s067q4", "expected": false, "rationale": "فقط قیمت است."}
+{"id": "s067q5", "expected": true, "rationale": "با تأخیر رسید."}
+{"id": "s067q6", "expected": 0, "rationale": "رسیدن با تأخیر مخالف به‌موقع است."}
+{"id": "s068q1", "expected": "B", "rationale": "بعضی روزها خانه کار می‌کند."}
+{"id": "s068q2", "expected": "C", "rationale": "روزهای دیگر دفتر می‌رود."}
+{"id": "s068q3", "expected": "D", "rationale": "روزهای خاص مشخص نشده‌اند."}
+{"id": "s068q4", "expected": false, "rationale": "روزهای دیگر دفتر می‌رود."}
+{"id": "s068q5", "expected": true, "rationale": "روزهای دیگر دفتر می‌رود."}
+{"id": "s068q6", "expected": 1, "rationale": "نام روزها داده نشده."}
+{"id": "s069q1", "expected": "A", "rationale": "نیاز نداشتن به اینترنت."}
+{"id": "s069q2", "expected": "B", "rationale": "نیاز ندارد با ضروری است در تضاد است."}
+{"id": "s069q3", "expected": "C", "rationale": "سیستم‌عامل ذکر نشده."}
+{"id": "s069q4", "expected": true, "rationale": "آفلاین اجرا می‌شود."}
+{"id": "s069q5", "expected": false, "rationale": "سیستم‌عامل نیامده."}
+{"id": "s069q6", "expected": 2, "rationale": "همان گزاره مبناست."}
+{"id": "s070q1", "expected": "D", "rationale": "save شد، upload نشد."}
+{"id": "s070q2", "expected": "A", "rationale": "فقط لپ‌تاپ است."}
+{"id": "s070q3", "expected": "B", "rationale": "فقط روی لپ‌تاپ من."}
+{"id": "s070q4", "expected": true, "rationale": "save شد."}
+{"id": "s070q5", "expected": false, "rationale": "upload نشد."}
+{"id": "s070q6", "expected": 0, "rationale": "بارگذاری نشده."}
+{"id": "s071q1", "expected": "C", "rationale": "شاید و غیرقطعی."}
+{"id": "s071q2", "expected": "D", "rationale": "پیش‌بینی قطعی نیست."}
+{"id": "s071q3", "expected": "A", "rationale": "مقدار ذکر نشده."}
+{"id": "s071q4", "expected": false, "rationale": "قطعی نیست."}
+{"id": "s071q5", "expected": true, "rationale": "شاید ببارد."}
+{"id": "s071q6", "expected": 0, "rationale": "مبنا صریحاً غیرقطعی است."}
+{"id": "s072q1", "expected": "B", "rationale": "الف راه بازیابی را می‌گوید."}
+{"id": "s072q2", "expected": "C", "rationale": "رمز را به اشتراک نگذارید."}
+{"id": "s072q3", "expected": "D", "rationale": "روی فراموشی رمز بزنید."}
+{"id": "s072q4", "expected": true, "rationale": "عدم اشتراک رمز."}
+{"id": "s072q5", "expected": false, "rationale": "روش بازیابی در ب نیست."}
+{"id": "s072q6", "expected": 1, "rationale": "در موضوع رمز است ولی پاسخ روش نیست."}
+{"id": "s073q1", "expected": "A", "rationale": "گیرنده نرگس است."}
+{"id": "s073q2", "expected": "B", "rationale": "تحویل به رشت."}
+{"id": "s073q3", "expected": "C", "rationale": "۲۵۰ هزار تومان بدون تبدیل واحد."}
+{"id": "s073q4", "expected": true, "rationale": "پرداخت‌کننده رضاست."}
+{"id": "s073q5", "expected": false, "rationale": "گیرنده نرگس است."}
+{"id": "s073q6", "expected": 2, "rationale": "رشت و نرگس هر دو ذکر شده‌اند."}
+{"id": "s074q1", "expected": "D", "rationale": "تحویل ۲۱ ذکر شده."}
+{"id": "s074q2", "expected": "A", "rationale": "شناسه A-17 است."}
+{"id": "s074q3", "expected": "B", "rationale": "نام ثبت نشده."}
+{"id": "s074q4", "expected": false, "rationale": "۱۹ و ۲۱ متفاوت‌اند، بدون تبدیل تاریخ."}
+{"id": "s074q5", "expected": true, "rationale": "صریحاً آمده."}
+{"id": "s074q6", "expected": 1, "rationale": "تاریخ هست؛ نام نیست."}
+{"id": "s075q1", "expected": "C", "rationale": "500 گرم."}
+{"id": "s075q2", "expected": "D", "rationale": "حجم ۲ لیتر."}
+{"id": "s075q3", "expected": "A", "rationale": "وزن جعبه خالی نیامده."}
+{"id": "s075q4", "expected": true, "rationale": "تعداد ۳ عدد."}
+{"id": "s075q5", "expected": false, "rationale": "500 گرم وزن است."}
+{"id": "s075q6", "expected": 0, "rationale": "نه وزن خالی و نه رنگ گفته شده."}
+{"id": "s076q1", "expected": "B", "rationale": "با کیان است نه کیانا."}
+{"id": "s076q2", "expected": "C", "rationale": "دفتر در کرج است."}
+{"id": "s076q3", "expected": "D", "rationale": "ساعت مشخص نشده."}
+{"id": "s076q4", "expected": false, "rationale": "نه کیانا."}
+{"id": "s076q5", "expected": true, "rationale": "محل دفتر یاس."}
+{"id": "s076q6", "expected": 1, "rationale": "شهر معلوم و ساعت نامعلوم است."}
+{"id": "s077q1", "expected": "A", "rationale": "ساري همان ساری است."}
+{"id": "s077q2", "expected": "B", "rationale": "كيان با حروف عربی نوشته شده."}
+{"id": "s077q3", "expected": "C", "rationale": "واحد 12 و پلاک ۲۱ است."}
+{"id": "s077q4", "expected": true, "rationale": "پلاک ۲۱."}
+{"id": "s077q5", "expected": false, "rationale": "واحد 12 است."}
+{"id": "s077q6", "expected": 2, "rationale": "هر دو با عدد صریح آمده‌اند."}
+{"id": "s078q1", "expected": "D", "rationale": "girande Sara hast."}
+{"id": "s078q2", "expected": "A", "rationale": "shahr Shiraz."}
+{"id": "s078q3", "expected": "B", "rationale": "hanooz moshakhas nist."}
+{"id": "s078q4", "expected": true, "rationale": "Shiraz ذکر شده."}
+{"id": "s078q5", "expected": false, "rationale": "زمان نامشخص است."}
+{"id": "s078q6", "expected": 0, "rationale": "زمان نامشخص و شماره غایب است."}
+{"id": "s079q1", "expected": "C", "rationale": "نسخه نهایی ۷۰۰ هزار تومان است."}
+{"id": "s079q2", "expected": "D", "rationale": "پیش‌نویس باطل شده."}
+{"id": "s079q3", "expected": "A", "rationale": "خالی است."}
+{"id": "s079q4", "expected": false, "rationale": "مبلغ نسخه باطل‌شده است."}
+{"id": "s079q5", "expected": true, "rationale": "۷۰۰ هزار تومان."}
+{"id": "s079q6", "expected": 1, "rationale": "مبلغ هست؛ تاریخ نیست."}
+{"id": "s080q1", "expected": "B", "rationale": "سبز برای آموزش."}
+{"id": "s080q2", "expected": "C", "rationale": "مسئول پژوهش مهدی."}
+{"id": "s080q3", "expected": "D", "rationale": "مسئول آموزش پریساست."}
+{"id": "s080q4", "expected": true, "rationale": "صریحاً ذکر شده."}
+{"id": "s080q5", "expected": false, "rationale": "پریسا مسئول آموزش است."}
+{"id": "s080q6", "expected": 2, "rationale": "پریسا و سبز هر دو معلوم‌اند."}

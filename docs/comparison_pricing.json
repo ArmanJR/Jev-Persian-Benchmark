@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-09-22",
+  "currency": "USD",
+  "unit": "per million tokens",
+  "models": [
+    {
+      "id": "google/gemma-4-31b-it",
+      "label": "Gemma 4 31B",
+      "input": 0.09,
+      "output": 0.34,
+      "rate_basis": "OpenRouter: DeepInfra Turbo standard uncached rate",
+      "source": "https://openrouter.ai/google/gemma-4-31b-it"
+    },
+    {
+      "id": "openai/gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "input": 0.20,
+      "output": 1.20,
+      "rate_basis": "OpenRouter: OpenAI standard uncached rate, not Flex",
+      "source": "https://openrouter.ai/openai/gpt-5.6-luna"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "input": 0.30,
+      "output": 1.20,
+      "rate_basis": "DeepSeek official peak, cache-miss rate; excludes OpenRouter promotion",
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "id": "anthropic/claude-haiku-4.5",
+      "label": "Claude Haiku 4.5",
+      "input": 1.00,
+      "output": 5.00,
+      "rate_basis": "OpenRouter: standard uncached rate",
+      "source": "https://openrouter.ai/anthropic/claude-haiku-4.5"
+    }
+  ]
+}
