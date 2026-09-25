@@ -1,36 +1,51 @@
 # Jev Persian Benchmark
 
-A Python CLI testing **`jev-1.13.0` on 480 authored Persian questions**, using
-`typesafe-sdk==0.7.1`. It batches related questions, saves raw responses, and
-scores them locally against frozen answers. No runtime model judge is used.
+A frozen benchmark of **Jev and Laya multilingual on 480 authored Persian questions**.
+Related questions are batched, raw responses are saved, and answers are scored
+locally. No runtime model judge is used.
 
 ## Performance
 
-**2026-09-22 UTC · dataset v1.0.0 · `jev-1.13.0`**
-**624/624 valid answers; 106 requests; no API failures or model mismatches.**
-Main metrics exclude diagnostics.
+Both runs used **dataset v1.0.0**, identical inputs and scoring:
+**624/624 valid answers across 106 requests each; no failures.** Main metrics
+exclude diagnostics.
 
-| Primitive | Questions | Success criterion | Result | Error metric ↓ |
-|---|---:|---|---:|---:|
-| Choice | 240 | Exact option | **239/240 · 99.6%** | Brier: 0.0112 |
-| Noul | 160 | Yes when p ≥ 0.5 | **159/160 · 99.4%** | Brier: 0.0120 |
-| Score | 80 | Within ±0.5 rubric levels | **76/80 · 95.0%** | MAE: 0.0709 levels |
+- **Jev:** `jev-1.13.0`, TypeSafe API via `typesafe-sdk==0.7.1`, 2026-09-22 UTC.
+- **Laya:** [`convaiinnovations/laya-multilingual`](https://huggingface.co/convaiinnovations/laya-multilingual/tree/e4e9ddf21a7b1903b7acffd8814ad4307bf63a67),
+  official `laya==0.3.20` / PyTorch 2.14.0, 2026-09-25 UTC. Ran offline on an
+  Apple M4 CPU in fp32, using the checkpoint's default settings.
 
-Noul precision / recall: **98.8% / 100%**. Score normalized MAE: **0.0354**.
+| Metric | Jev | Laya multilingual |
+|---|---:|---:|
+| Choice accuracy (exact option) | **239/240 · 99.6%** | **141/240 · 58.75%** |
+| Noul accuracy (yes when p ≥ 0.5) | **159/160 · 99.4%** | **102/160 · 63.75%** |
+| Score within ±0.5 rubric levels | **76/80 · 95.0%** | **28/80 · 35.0%** |
+| Choice Brier ↓ | 0.0112 | 0.5995 |
+| Noul Brier ↓ | 0.0120 | 0.2823 |
+| Score MAE, rubric levels ↓ | 0.0709 | 0.7238 |
+
 Choice Brier sums over classes (range 0–2); binary Noul Brier ranges from 0–1.
 
-![Main success rates and Score error by category](docs/plots/performance.png)
+Jev category breakdown:
 
-| Diagnostic | Result |
-|---|---|
-| Matched pairs | Both answers correct in all 24 invariant and all 24 contrast pairs |
-| English instructions | Same decisions as the matched Persian subset; all 48 met their success criterion |
-| Repeatability | No decision changes across 48 three-observation groups; probabilities still varied |
+![Jev main success rates and Score error by category](docs/plots/performance.png)
 
-The six errors concerned exclusive availability, permissions, unrecorded consent,
-and a cosmetic button change. One wrong Score had confidence **0.87**.
+| Diagnostic | Jev | Laya multilingual |
+|---|---|---|
+| Matched pairs: both answers correct | 24/24 invariant; 24/24 contrast | 14/24 invariant; 16/24 contrast |
+| English instructions | 0/48 decisions changed; all 48 correct | 18/48 decisions changed; no success-rate improvement |
+| Repeatability (48 three-observation groups) | No decision changes | No decision changes |
 
-## Cost and speed
+Jev's six errors concerned exclusive availability, permissions, unrecorded consent,
+and a cosmetic button change. Laya was strongest on intent Choice questions
+(21/24 correct); scenario decisions were weaker (10/24).
+
+Laya's 106 calls took **12.27 seconds total; 114 ms median**, after a **5.85-second
+model load**. Local inference incurred no API charges; hardware and electricity
+costs were not measured. These are single-run observations, not a controlled
+hardware comparison with Jev's hosted API.
+
+## Jev API cost and speed
 
 [Published pricing](https://docs.typesafe.ai/models), checked 2026-09-22:
 **$0.042 per million input tokens; output free**.
@@ -82,7 +97,7 @@ charge differently. Formula: `(input tokens × input rate + output tokens × out
 has three Choice questions (select an option), two Noul questions (probability of
 “yes”), and one Score question (a probability-weighted position on three rubric
 levels). Every question has a fixed expected answer and a brief rationale; these
-are stored separately and never sent to Jev.
+are stored separately and never sent to either model.
 
 Each of the ten categories has **eight scenarios / 48 questions**:
 
@@ -103,7 +118,7 @@ Each of the ten categories has **eight scenarios / 48 questions**:
 
 Actual state excerpts below, with questions and expected answers summarized in
 English. Complete cases include the options, context, and any required policy.
-These are **gold answers**, not claims that Jev answered every example correctly.
+These are **gold answers**, not claims that either model answered every example correctly.
 
 **Intent and classification**
 
@@ -206,7 +221,7 @@ pass by the authoring model, without independent human annotation. Sources:
 [scenarios](data/scenarios.jsonl), [answers and rationales](data/gold.jsonl),
 [authoring script](scripts/author_dataset.py), [review and revision policy](data/REVIEW.md).
 
-## Run it
+## Run Jev
 
 Use Python 3.11+ and uv. Set `TYPESAFE_API_KEY` in `.env` or the environment.
 
@@ -223,6 +238,10 @@ overrides the model. Reports rebuild offline. API failures are separate from
 wrong answers; incomplete runs exit with status 2. Credentials and raw results
 are Git-ignored.
 
+The official Laya run used a separate Python runner with the same dataset and
+scorer. Its local artifacts are in `results/laya-official-full-v1/`, including
+`benchmark.py`, pinned `requirements.txt`, checkpoint metadata, and raw responses.
+
 **Verified:** 66 tests, Ruff, and byte-for-byte offline report reproduction.
 Tests: `uv run pytest -q`. Regenerate plots:
 `uv run scripts/plot_results.py --run results/full-v1` (temporary Matplotlib dependency).
@@ -231,8 +250,9 @@ Tests: `uv run pytest -q`. Regenerate plots:
 
 Jev handled these short Persian cases well and at very low API cost, but made
 mistakes applying evidence and permission rules—even with high confidence.
-Under the equal-token, similar-accuracy assumptions above, the four alternatives
-cost **4.4–56.6× as much as Jev**.
+Laya multilingual ran fully offline, with substantially lower accuracy on the
+same questions, especially Score rubrics. These results apply to this checkpoint
+and dataset.
 The dataset is synthetic, explicitly cued, and authored/reviewed by one model;
 related questions are correlated. Treat this as a useful baseline, then validate
 on independently annotated, natural Persian requests before relying on it.
