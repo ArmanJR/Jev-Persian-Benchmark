@@ -3,7 +3,7 @@
 import hashlib
 import json
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 AREAS = {
@@ -199,12 +199,22 @@ class Dataset:
     manifest: dict
     smoke: list
     smoke_gold: dict
+    diagnostics: list = field(default_factory=list)
 
 
 def load_dataset(directory):
     root = Path(directory)
     manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     require(manifest["thresholds"] == THRESHOLDS, "Unsupported scoring thresholds")
+    if manifest.get("benchmark") == "classical_transfer":
+        from .classical import load_classical_dataset
+
+        return load_classical_dataset(root, manifest)
+    if manifest.get("benchmark") == "poetry":
+        from .poetry import load_poetry_dataset
+
+        return load_poetry_dataset(root, manifest)
+    require(manifest.get("benchmark", "general") == "general", "Unsupported benchmark")
     required_files = {
         "scenarios.jsonl",
         "gold.jsonl",

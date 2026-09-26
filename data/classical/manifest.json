@@ -1,0 +1,35 @@
+{
+  "benchmark": "classical_transfer",
+  "revision": "1.0.0",
+  "counts": {
+    "choice": 48
+  },
+  "excerpts": 24,
+  "diagnostic_counts": {
+    "prose_control": 24,
+    "no_poem_control": 24
+  },
+  "thresholds": {
+    "noul": 0.5,
+    "high_confidence": 0.8,
+    "score_tolerance": 0.5
+  },
+  "repeat_scenarios": [],
+  "smoke_scenarios": [
+    "c001p",
+    "c001a",
+    "c007p",
+    "c007a",
+    "c013p",
+    "c013a",
+    "c019p",
+    "c019a"
+  ],
+  "annotation": "Assistant-authored and assistant-reviewed pilot; no independent human annotation. Frozen before Jev evaluation. Public-domain source verse, newly authored candidate interpretations and situations. Not representative of each poet's work.",
+  "sha256": {
+    "scenarios.jsonl": "ae9ab4226d3243348234cc41071ae257a241ba85b9f55297a39056196b50eefa",
+    "gold.jsonl": "368a1f7a522ef12a7e600c1b0871f05846ee1efa54cfd283f509edf5bc51277b",
+    "authored.json": "330002fbadc02340aad730bcd30bf2181fb09045edf59b0c2b00649210412e3d",
+    "sources.json": "5045612bea17cd9ca79f0d62da635793cd19f5a9cd9e82baa77288203b1391b0"
+  }
+}

@@ -1,0 +1,96 @@
+{"id": "c001pq1", "expected": "B", "rationale": "The verse criticizes indifference to others' suffering; it does not praise personal suffering or require successful problem-solving."}
+{"id": "c001aq1", "expected": "A", "rationale": "Attentive companionship of a distressed stranger exemplifies compassion. The other situations illustrate risk preference, timely speech, and learning."}
+{"id": "c001cq1", "expected": "A", "rationale": "Attentive companionship of a distressed stranger exemplifies compassion. The other situations illustrate risk preference, timely speech, and learning."}
+{"id": "c001nq1", "expected": "A", "rationale": "Attentive companionship of a distressed stranger exemplifies compassion. The other situations illustrate risk preference, timely speech, and learning."}
+{"id": "c002pq1", "expected": "C", "rationale": "The contrast is between professed friendship during prosperity and demonstrated support during hardship."}
+{"id": "c002aq1", "expected": "A", "rationale": "Continuing support after a friend's bankruptcy tests loyalty under changed fortune, not merely fairness to allies and rivals."}
+{"id": "c002cq1", "expected": "A", "rationale": "Continuing support after a friend's bankruptcy tests loyalty under changed fortune, not merely fairness to allies and rivals."}
+{"id": "c002nq1", "expected": "A", "rationale": "Continuing support after a friend's bankruptcy tests loyalty under changed fortune, not merely fairness to allies and rivals."}
+{"id": "c003pq1", "expected": "A", "rationale": "The shore/sea contrast distinguishes safety from opportunity; neither guaranteed profit nor universal recklessness is asserted."}
+{"id": "c003aq1", "expected": "C", "rationale": "Choosing a secure lower-income job over a risky venture directly instantiates the safety/opportunity tradeoff."}
+{"id": "c003cq1", "expected": "C", "rationale": "Choosing a secure lower-income job over a risky venture directly instantiates the safety/opportunity tradeoff."}
+{"id": "c003nq1", "expected": "C", "rationale": "Choosing a secure lower-income job over a risky venture directly instantiates the safety/opportunity tradeoff."}
+{"id": "c004pq1", "expected": "D", "rationale": "Clay explicitly attributes its acquired fragrance to companionship with the flower rather than innate excellence."}
+{"id": "c004aq1", "expected": "B", "rationale": "The apprentice acquires diligence through sustained association with diligent colleagues; the other cases concern perspective, overlooked resources, or rashness."}
+{"id": "c004cq1", "expected": "B", "rationale": "The apprentice acquires diligence through sustained association with diligent colleagues; the other cases concern perspective, overlooked resources, or rashness."}
+{"id": "c004nq1", "expected": "B", "rationale": "The apprentice acquires diligence through sustained association with diligent colleagues; the other cases concern perspective, overlooked resources, or rashness."}
+{"id": "c005pq1", "expected": "A", "rationale": "Melting snow conveys the loss of remaining life; the final phrase rebukes heedless complacency."}
+{"id": "c005aq1", "expected": "C", "rationale": "Recognizing a shrinking deadline and ending procrastination responds to the warning against wasting a diminishing opportunity."}
+{"id": "c005cq1", "expected": "C", "rationale": "Recognizing a shrinking deadline and ending procrastination responds to the warning against wasting a diminishing opportunity."}
+{"id": "c005nq1", "expected": "C", "rationale": "Recognizing a shrinking deadline and ending procrastination responds to the warning against wasting a diminishing opportunity."}
+{"id": "c006pq1", "expected": "D", "rationale": "The passage explicitly rejects both silence when speech is needed and speech when silence is needed."}
+{"id": "c006aq1", "expected": "B", "rationale": "Listening during others' explanations and speaking when a decision needs correction embodies context-sensitive timing."}
+{"id": "c006cq1", "expected": "B", "rationale": "Listening during others' explanations and speaking when a decision needs correction embodies context-sensitive timing."}
+{"id": "c006nq1", "expected": "B", "rationale": "Listening during others' explanations and speaking when a decision needs correction embodies context-sensitive timing."}
+{"id": "c007pq1", "expected": "D", "rationale": "The rhetorical question challenges secure outsiders' understanding, not the cause or concealment of the speaker's danger."}
+{"id": "c007aq1", "expected": "D", "rationale": "The safe observer underestimates an emergency they have not experienced, matching the shore/danger contrast."}
+{"id": "c007cq1", "expected": "D", "rationale": "The safe observer underestimates an emergency they have not experienced, matching the shore/danger contrast."}
+{"id": "c007nq1", "expected": "D", "rationale": "The safe observer underestimates an emergency they have not experienced, matching the shore/danger contrast."}
+{"id": "c008pq1", "expected": "B", "rationale": "The two complementary prescriptions are generosity toward friends and restraint toward enemies, not withdrawal or unconditional agreement."}
+{"id": "c008aq1", "expected": "B", "rationale": "The group manager combines fairness to allies with forbearance toward rivals, preserving both relations in the verse."}
+{"id": "c008cq1", "expected": "B", "rationale": "The group manager combines fairness to allies with forbearance toward rivals, preserving both relations in the verse."}
+{"id": "c008nq1", "expected": "B", "rationale": "The group manager combines fairness to allies with forbearance toward rivals, preserving both relations in the verse."}
+{"id": "c009pq1", "expected": "C", "rationale": "The sowing/reaping image assigns consequences individually and supports self-scrutiny over others' personal faults."}
+{"id": "c009aq1", "expected": "D", "rationale": "The person redirects attention from a colleague's personal faults to their own conduct and individual responsibility."}
+{"id": "c009cq1", "expected": "D", "rationale": "The person redirects attention from a colleague's personal faults to their own conduct and individual responsibility."}
+{"id": "c009nq1", "expected": "D", "rationale": "The person redirects attention from a colleague's personal faults to their own conduct and individual responsibility."}
+{"id": "c010pq1", "expected": "D", "rationale": "The second hemistich explicitly contrasts possession with unrecognized possession and outward seeking."}
+{"id": "c010aq1", "expected": "C", "rationale": "Searching externally for expertise already present inside the team preserves the relation without copying cup or treasure imagery."}
+{"id": "c010cq1", "expected": "C", "rationale": "Searching externally for expertise already present inside the team preserves the relation without copying cup or treasure imagery."}
+{"id": "c010nq1", "expected": "C", "rationale": "Searching externally for expertise already present inside the team preserves the relation without copying cup or treasure imagery."}
+{"id": "c011pq1", "expected": "C", "rationale": "The target is the gap between public moral instruction and private conduct, not privacy itself or inadequate speaking time."}
+{"id": "c011aq1", "expected": "C", "rationale": "Publicly urging conservation while privately wasting resources exemplifies the same preach/practice inconsistency."}
+{"id": "c011cq1", "expected": "C", "rationale": "Publicly urging conservation while privately wasting resources exemplifies the same preach/practice inconsistency."}
+{"id": "c011nq1", "expected": "C", "rationale": "Publicly urging conservation while privately wasting resources exemplifies the same preach/practice inconsistency."}
+{"id": "c012pq1", "expected": "A", "rationale": "Temporary fortune motivates timely kindness; it neither negates kindness nor guarantees permanent prosperity."}
+{"id": "c012aq1", "expected": "B", "rationale": "Using a temporary favorable position to help friends combines both halves, unlike contentment or homesickness alone."}
+{"id": "c012cq1", "expected": "B", "rationale": "Using a temporary favorable position to help friends combines both halves, unlike contentment or homesickness alone."}
+{"id": "c012nq1", "expected": "B", "rationale": "Using a temporary favorable position to help friends combines both halves, unlike contentment or homesickness alone."}
+{"id": "c013pq1", "expected": "C", "rationale": "The complaint is projection without inquiry, not successful intuitive understanding or a stated intent to deceive."}
+{"id": "c013aq1", "expected": "B", "rationale": "Listeners impose their own experiences on the speaker instead of investigating the speaker's intended meaning."}
+{"id": "c013cq1", "expected": "B", "rationale": "Listeners impose their own experiences on the speaker instead of investigating the speaker's intended meaning."}
+{"id": "c013nq1", "expected": "B", "rationale": "Listeners impose their own experiences on the speaker instead of investigating the speaker's intended meaning."}
+{"id": "c014pq1", "expected": "D", "rationale": "The statement links separation to a desire for reunion; it asserts neither guaranteed reunion nor its impossibility."}
+{"id": "c014aq1", "expected": "D", "rationale": "The migrant's longing for reunion despite success elsewhere preserves the separation/return relation."}
+{"id": "c014cq1", "expected": "D", "rationale": "The migrant's longing for reunion despite success elsewhere preserves the separation/return relation."}
+{"id": "c014nq1", "expected": "D", "rationale": "The migrant's longing for reunion despite success elsewhere preserves the separation/return relation."}
+{"id": "c015pq1", "expected": "B", "rationale": "The limited vessel contrasts with inexhaustible greed; contentment is not denial of all legitimate needs."}
+{"id": "c015aq1", "expected": "A", "rationale": "Ever-rising wants despite accumulating possessions demonstrate the unfilled vessel of greed."}
+{"id": "c015cq1", "expected": "A", "rationale": "Ever-rising wants despite accumulating possessions demonstrate the unfilled vessel of greed."}
+{"id": "c015nq1", "expected": "A", "rationale": "Ever-rising wants despite accumulating possessions demonstrate the unfilled vessel of greed."}
+{"id": "c016pq1", "expected": "A", "rationale": "Repeated shared-source/different-output examples challenge inference from superficial likeness to equal value."}
+{"id": "c016aq1", "expected": "A", "rationale": "Identical raw materials yield different products because processing differs; this matches the shared-input/different-result relation."}
+{"id": "c016cq1", "expected": "A", "rationale": "Identical raw materials yield different products because processing differs; this matches the shared-input/different-result relation."}
+{"id": "c016nq1", "expected": "A", "rationale": "Identical raw materials yield different products because processing differs; this matches the shared-input/different-result relation."}
+{"id": "c017pq1", "expected": "A", "rationale": "The object is stable; differing contact with its parts causes disagreement, and the proposed light changes access to evidence."}
+{"id": "c017aq1", "expected": "C", "rationale": "Departments using different fragments of one report disagree until the complete report exposes the basis of their disagreement."}
+{"id": "c017cq1", "expected": "C", "rationale": "Departments using different fragments of one report disagree until the complete report exposes the basis of their disagreement."}
+{"id": "c017nq1", "expected": "C", "rationale": "Departments using different fragments of one report disagree until the complete report exposes the basis of their disagreement."}
+{"id": "c018pq1", "expected": "B", "rationale": "Letters are likened to a vessel and meaning to its contents; bitterness belongs to the water rather than the vessel."}
+{"id": "c018aq1", "expected": "B", "rationale": "Renaming a faulty report does not improve its substance; the evaluator distinguishes label from content."}
+{"id": "c018cq1", "expected": "B", "rationale": "Renaming a faulty report does not improve its substance; the evaluator distinguishes label from content."}
+{"id": "c018nq1", "expected": "B", "rationale": "Renaming a faulty report does not improve its substance; the evaluator distinguishes label from content."}
+{"id": "c019pq1", "expected": "C", "rationale": "Knowledge is presented as enabling capability and invigorating the old, not guaranteeing strength or literal youth."}
+{"id": "c019aq1", "expected": "D", "rationale": "An older repairer gains a previously absent capability through learning, preserving both knowledge/ability and age contrasts."}
+{"id": "c019cq1", "expected": "D", "rationale": "An older repairer gains a previously absent capability through learning, preserving both knowledge/ability and age contrasts."}
+{"id": "c019nq1", "expected": "D", "rationale": "An older repairer gains a previously absent capability through learning, preserving both knowledge/ability and age contrasts."}
+{"id": "c020pq1", "expected": "B", "rationale": "The verse connects failing to use wisdom with distress at one's own actions; the converse and universal external blame do not follow."}
+{"id": "c020aq1", "expected": "A", "rationale": "An unexamined commitment brings subsequent regret through the person's own decision."}
+{"id": "c020cq1", "expected": "A", "rationale": "An unexamined commitment brings subsequent regret through the person's own decision."}
+{"id": "c020nq1", "expected": "A", "rationale": "An unexamined commitment brings subsequent regret through the person's own decision."}
+{"id": "c021pq1", "expected": "B", "rationale": "The praise joins making the world flourish with consistency between what is seen and hidden, not secrecy or mere appearance."}
+{"id": "c021aq1", "expected": "C", "rationale": "The neighborhood official both improves the community and maintains the same good conduct with and without an audience."}
+{"id": "c021cq1", "expected": "C", "rationale": "The neighborhood official both improves the community and maintains the same good conduct with and without an audience."}
+{"id": "c021nq1", "expected": "C", "rationale": "The neighborhood official both improves the community and maintains the same good conduct with and without an audience."}
+{"id": "c022pq1", "expected": "C", "rationale": "The passage links contentment to a form of wealth and flourishing; it does not equate contentment with stopping effort."}
+{"id": "c022aq1", "expected": "A", "rationale": "The adequately provided family does not tie well-being to endless luxury consumption, illustrating contentment rather than temporary opportunity."}
+{"id": "c022cq1", "expected": "A", "rationale": "The adequately provided family does not tie well-being to endless luxury consumption, illustrating contentment rather than temporary opportunity."}
+{"id": "c022nq1", "expected": "A", "rationale": "The adequately provided family does not tie well-being to endless luxury consumption, illustrating contentment rather than temporary opportunity."}
+{"id": "c023pq1", "expected": "D", "rationale": "The restriction concerns grief over what has not arrived, not preparation, magical causation, or denying present problems."}
+{"id": "c023aq1", "expected": "D", "rationale": "Preserving today's composure rather than grieving over an unoccurred bad event directly matches the temporal distinction."}
+{"id": "c023cq1", "expected": "D", "rationale": "Preserving today's composure rather than grieving over an unoccurred bad event directly matches the temporal distinction."}
+{"id": "c023nq1", "expected": "D", "rationale": "Preserving today's composure rather than grieving over an unoccurred bad event directly matches the temporal distinction."}
+{"id": "c024pq1", "expected": "A", "rationale": "Treasury-funded replacement and absence of imposed obligation are explicit; hunting the thief alone is not the promised act."}
+{"id": "c024aq1", "expected": "D", "rationale": "The responsible manager funds replacement for theft victims without demanding gratitude, preserving restitution and absence of condescension."}
+{"id": "c024cq1", "expected": "D", "rationale": "The responsible manager funds replacement for theft victims without demanding gratitude, preserving restitution and absence of condescension."}
+{"id": "c024nq1", "expected": "D", "rationale": "The responsible manager funds replacement for theft victims without demanding gratitude, preserving restitution and absence of condescension."}

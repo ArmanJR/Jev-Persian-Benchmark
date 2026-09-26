@@ -8,15 +8,15 @@ from pathlib import Path
 
 from .data import load_dataset
 from .report import build_report
-from .runner import run
+from .runner import plan_jobs, run
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Authored Persian benchmark for Jev")
+    parser = argparse.ArgumentParser(description="General Persian and literary benchmarks for Jev")
     commands = parser.add_subparsers(dest="command", required=True)
     validate = commands.add_parser("validate", help="Validate all frozen datasets and diagnostics")
     validate.add_argument("--data", type=Path, default=Path("data"))
-    execute = commands.add_parser("run", help="Run smoke (12) or full evaluation (624 questions)")
+    execute = commands.add_parser("run", help="Run the selected dataset's smoke or full evaluation")
     execute.add_argument("--data", type=Path, default=Path("data"))
     execute.add_argument("--suite", choices=["smoke", "full"], default="smoke")
     execute.add_argument("--model", default="jev-1.13.0")
@@ -31,10 +31,23 @@ def main(argv=None):
     try:
         if args.command == "validate":
             data = load_dataset(args.data)
+            full_jobs = plan_jobs(data, "full", "validation")
+            phases = {}
+            for job in full_jobs:
+                phases[job["phase"]] = phases.get(job["phase"], 0) + len(
+                    job["scenario"]["questions"]
+                )
+            smoke_kind = (
+                "subset"
+                if data.manifest.get("benchmark") in {"poetry", "classical_transfer"}
+                else "separate"
+            )
             print(
-                f"Valid revision {data.manifest['revision']}: 480 main questions, 48 English "
-                f"counterparts, "
-                "48 repeat questions ×2, 12 separate smoke questions."
+                f"Valid {data.manifest.get('benchmark', 'general')} revision "
+                f"{data.manifest['revision']}: "
+                + ", ".join(f"{n} {phase} questions" for phase, n in phases.items())
+                + f"; {len(data.smoke_gold)} smoke questions ({smoke_kind}); "
+                + f"{len(full_jobs)} full requests."
             )
             return 0
         if args.command == "run":

@@ -69,6 +69,8 @@ def analyze(meta, events):
                 "answer": answers.get(qid),
                 "returned_model": event.get("returned_model") if event else None,
             }
+            if "source" in job["scenario"]:
+                row["source"] = job["scenario"]["source"]
             if event is None:
                 row.update(status="not_completed", error="Request did not finish")
             elif event["status"] != "ok":
@@ -204,6 +206,24 @@ def analyze(meta, events):
         "usage": usage,
         "warnings": warnings,
     }
+    if meta["dataset_manifest"].get("benchmark") == "poetry":
+        counts = Counter(r["gold"]["expected"] for r in main)
+        majority = max("ABCD", key=lambda label: counts[label])
+        summary.update(
+            benchmark="poetry",
+            label_counts={label: counts[label] for label in "ABCD"},
+            baselines={
+                "random_accuracy": 0.25,
+                "majority_label": majority,
+                "majority_correct": counts[majority],
+                "majority_accuracy": ratio(counts[majority], len(main)),
+                "planned_questions": len(main),
+            },
+        )
+    if meta["dataset_manifest"].get("benchmark") == "classical_transfer":
+        from .classical_report import classical_metrics
+
+        summary.update(benchmark="classical_transfer", classical=classical_metrics(rows))
     return summary, rows
 
 
@@ -235,6 +255,12 @@ def metric_table(metrics):
 
 
 def render_markdown(meta, summary, rows):
+    if meta["dataset_manifest"].get("benchmark") == "classical_transfer":
+        from .classical_report import render_classical_markdown
+
+        return render_classical_markdown(meta, summary, rows)
+    if meta["dataset_manifest"].get("benchmark") == "poetry":
+        return render_poetry_markdown(meta, summary, rows)
     c = summary["completion"]
     lines = [
         "# Jev Persian benchmark",
@@ -430,6 +456,110 @@ def render_markdown(meta, summary, rows):
     for warning in summary["warnings"]:
         lines += [f"Warning: {warning}", ""]
     return "\n".join(lines)
+
+
+def render_poetry_markdown(meta, summary, rows):
+    c, m = summary["completion"], summary["main"]["choice"]
+    baseline, manifest = summary["baselines"], meta["dataset_manifest"]
+    stats = manifest["preparation"]
+    lines = [
+        "# Jev Persian poetry and literary semantics",
+        "",
+        f"Run started: {meta['created_at']}. Dataset revision: {summary['dataset_revision']}. "
+        f"Suite: {summary['suite']}.",
+        "",
+        f"**{'COMPLETE' if c['complete'] else 'INCOMPLETE'}: {m['correct']} correct / "
+        f"{m['valid']} valid / {m['planned']} planned; {c['failed_answers']} failed; "
+        f"{c['not_completed']} unfinished.** Requests: {c['finished_requests']} / "
+        f"{c['planned_requests']} finished ({c['failed_requests']} failed).",
+        "",
+        f"Requested model: `{summary['requested_model']}`. Returned models: "
+        f"`{summary['returned_models']}`. Model mismatches: "
+        f"**{summary['model_mismatch_requests']}** requests.",
+        "",
+        "| Metric | Result |",
+        "|---|---:|",
+        f"| Exact Choice accuracy | {pct(m['accuracy'])} |",
+        f"| Choice Brier (lower is better; range 0–2) | {decimal(m['brier'])} |",
+        f"| High-confidence answers (confidence ≥0.8) | {m['high_confidence_n']} / {m['valid']} |",
+        f"| High-confidence coverage | {pct(m['high_confidence_coverage'])} |",
+        f"| High-confidence accuracy | {pct(m['high_confidence_accuracy'])} |",
+        f"| Uniform random baseline | {pct(baseline['random_accuracy'])} |",
+        f"| Majority-label baseline ({baseline['majority_label']}) | "
+        f"{baseline['majority_correct']} / {baseline['planned_questions']} · "
+        f"{pct(baseline['majority_accuracy'])} |",
+        "",
+        "Accuracy and Brier use valid answers only. API and response-validation failures are "
+        "reported separately. Baselines use all planned questions in this suite; compare "
+        "accuracy with them only once coverage is complete. Confidence is diagnostic, not a "
+        "guarantee of correctness.",
+        "",
+        "Gold labels: " + "; ".join(f"{k}={v}" for k, v in summary["label_counts"].items()) + ". "
+        "Source labels 1–4 map to A–D without shuffling.",
+        "",
+        "## Data and interpretation",
+        "",
+        f"{stats['source_questions']} source questions; {stats['excluded_questions']} documented "
+        f"exclusions; {stats['retained_questions']} retained. "
+        f"{stats['repaired_questions']} questions have recorded extraction repairs. "
+        "Each request includes the complete reviewed question stem and its four options. "
+        "Only the model's selected option is scored against the supplied key; no model judge "
+        "or generated explanation is used.",
+        "",
+        "The bank includes classical and modern poetry, prose, and religious passages. "
+        "It tests literary interpretation/comparison, not exclusively classical poetry. "
+        "Source answer keys were retained without independent reannotation. Residual OCR "
+        "errors and unverified half-verse order remain; this is an exploratory extracted "
+        "question bank, not a critical edition. Repeated verses and related questions are "
+        "correlated. Poet attribution is unavailable, so no per-poet claims are supported. "
+        "High scores do not establish comprehensive poetry understanding. Historical LLM "
+        "results used different prompts/subsets and are not directly comparable.",
+        "",
+        "The 12-question smoke suite is a fixed, label-balanced subset of the full set. "
+        "Its results are separate and are never added to the full-run denominator.",
+        "",
+        "## Resources",
+        "",
+    ]
+    usage, latency = summary["usage"], summary["latency_seconds"]
+    lines += [
+        f"Request time: {latency['total']:.3f}s total; {decimal(latency['median'])}s median; "
+        f"{decimal(latency['max'])}s maximum, including retries. Reported tokens: "
+        f"{usage['input_tokens']} input, {usage['output_tokens']} output. Usage is available "
+        f"for {usage['requests_with_usage']} / {c['finished_requests']} finished requests; "
+        "unreported usage is unknown, not zero.",
+        "",
+        "## Incorrect or incomplete examples",
+        "",
+        "All unsuccessful questions are included below. Full responses and probabilities "
+        "are preserved in `answers.jsonl` and `requests.jsonl`.",
+    ]
+    failed = [r for r in rows if r["status"] != "ok" or not r["metrics"]["correct"]]
+    if not failed:
+        lines += ["", "None."]
+    for row in failed:
+        source = row["source"]
+        lines += [
+            "",
+            f"### {row['question_id']} — source question {source['question_id']}, "
+            f"page {source['page']}",
+            "",
+            clean(row["state"]["text"]),
+            "",
+        ]
+        for index, (label, text) in enumerate(row["question"]["criteria"].items(), 1):
+            lines.append(f"- {label} (source {index}): {clean(text.replace(chr(10), ' / '))}")
+        observed = (
+            json.dumps(row["answer"], ensure_ascii=False) if row["status"] == "ok" else row["error"]
+        )
+        lines += [
+            "",
+            f"Expected: **{row['gold']['expected']}**. "
+            f"{'Observed' if row['status'] == 'ok' else 'Failure'}: {clean(observed)}.",
+        ]
+    for warning in summary["warnings"]:
+        lines += ["", f"Warning: {warning}"]
+    return "\n".join(lines) + "\n"
 
 
 def build_report(directory):
