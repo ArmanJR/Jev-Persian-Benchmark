@@ -1,10 +1,16 @@
 # Jev Persian Benchmark
 
-A frozen benchmark of **Jev and Laya multilingual on 480 authored Persian questions**.
-Related questions are batched, raw responses are saved, and answers are scored
-locally. No runtime model judge is used.
+Benchmarks for **Jev** on **480 authored general Persian questions** and a
+**24-excerpt classical Persian poetry pilot** (48 main questions plus 48 controls).
+Related general questions are batched; poetry questions run individually. Raw
+responses are saved and answers are scored locally, without a runtime model judge.
+The general benchmark's historical Laya comparison is retained below.
 
-## Performance
+The [latest classical-poetry run](#classical-meaning-and-application) scored
+**24/24 on meaning recognition and 24/24 on situation matching**. See the
+[worked examples and run results](docs/classical-poetry.md) for exactly what Jev received and selected.
+
+## General Persian performance
 
 Both runs used **dataset v1.0.0**, identical inputs and scoring:
 **624/624 valid answers across 106 requests each; no failures.** Main metrics
@@ -221,7 +227,72 @@ pass by the authoring model, without independent human annotation. Sources:
 [scenarios](data/scenarios.jsonl), [answers and rationales](data/gold.jsonl),
 [authoring script](scripts/author_dataset.py), [review and revision policy](data/REVIEW.md).
 
-## Run Jev
+## Classical meaning and application
+
+The latest full run of **`jev-1.13.0`** on revision **1.0.0**, started at
+**2026-09-26 01:42:39 UTC**, returned **96/96 valid responses**, with no request
+failures or model mismatches:
+
+| Task / condition | Correct |
+|---|---:|
+| Paraphrase from original verse | 24/24 · 100% |
+| Situation matching from original verse | 24/24 · 100% |
+| Both main tasks correct on the same excerpt | 24/24 excerpts · 100% |
+| Situation matching with authored prose meaning | 24/24 · 100% |
+| Situation matching without the passage | 6/24 · 25% |
+
+The pilot uses six source-checked excerpts each from **Sa’adi, Hafez, Rumi, and
+Ferdowsi**. For each excerpt, Jev independently chooses one of four modern-Persian
+paraphrases and one of four real-world situations illustrating its meaning. The
+second request never sees the candidate paraphrases or the answer to the first.
+
+The full run has **48 main questions**, plus **24 modern-prose controls** and
+**24 no-poem controls** for application. Four excerpts share each situation bank
+with different correct answers, reducing the usefulness of simply selecting the
+most attractive situation. Reports separate task accuracies, both-correct excerpt
+rates, and matched-control differences; controls never enter main accuracy. The
+full main tasks each have a 25% random and fixed-label baseline.
+
+For example, Jev matched Hafez's «وآنچه خود داشت ز بیگانه تمنّا می‌کرد» to a team
+seeking an external consultant while overlooking expertise already inside the
+team. With the **same four situations**, it matched Ferdowsi's warning about acting
+without wisdom to someone regretting an unexamined commitment. Both selections
+were correct. [Full Persian inputs, choices, and observed answers](docs/classical-poetry.md)
+also show examples from Sa’adi and Rumi and the exact control inputs.
+
+Application accuracy fell by **75 percentage points** when the poem was removed.
+This supports use of the passage to distinguish meanings on these selected
+examples, not general poetic mastery or proof against memorization. No accuracy
+gap was observed between original verse and supplied prose meanings, but perfect
+scores on this small set do not establish equal difficulty.
+
+The pilot is assistant-authored and reviewed, **not independently human-annotated**.
+It favors familiar, interpretable passages and does not establish representative
+per-poet ability. Prose controls supply an interpretation and can make the task
+easier through simplification or author cues. See the [review and protocol](data/classical/REVIEW.md)
+before interpreting scores or revising the dataset. The perfect main scores mean
+this mostly straightforward pilot does not yet distinguish Jev's limits.
+
+The run used **`typesafe-sdk==0.7.1`** and **63,129 input / 4,824 output tokens**.
+Request time totaled **12.65 seconds**, with a **122 ms median**. Saved local
+artifacts are in `results/classical-full-v1/`; the [run documentation](docs/classical-poetry.md)
+records the results without requiring those Git-ignored files.
+
+With `TYPESAFE_API_KEY` configured in `.env` or the environment:
+
+```sh
+uv run scripts/prepare_classical.py --check
+uv run jev-benchmark validate --data data/classical
+uv run --env-file .env jev-benchmark run --data data/classical --suite smoke --output results/classical-smoke-v1
+uv run --env-file .env jev-benchmark run --data data/classical --suite full --output results/classical-full-v1
+uv run jev-benchmark report results/classical-full-v1
+```
+
+Use new output directories for later runs. The eight-question smoke suite is a
+fixed subset of the main tasks, excludes controls, and is never added to full results.
+Sources are stored locally; preparation checks and reporting need no network.
+
+## Run Jev on general Persian
 
 Use Python 3.11+ and uv. Set `TYPESAFE_API_KEY` in `.env` or the environment.
 
@@ -242,7 +313,7 @@ The official Laya run used a separate Python runner with the same dataset and
 scorer. Its local artifacts are in `results/laya-official-full-v1/`, including
 `benchmark.py`, pinned `requirements.txt`, checkpoint metadata, and raw responses.
 
-**Verified:** 66 tests, Ruff, and byte-for-byte offline report reproduction.
+**Verified:** 106 tests, Ruff, and byte-for-byte dataset and offline report reproduction.
 Tests: `uv run pytest -q`. Regenerate plots:
 `uv run scripts/plot_results.py --run results/full-v1` (temporary Matplotlib dependency).
 
@@ -253,6 +324,12 @@ mistakes applying evidence and permission rules—even with high confidence.
 Laya multilingual ran fully offline, with substantially lower accuracy on the
 same questions, especially Score rubrics. These results apply to this checkpoint
 and dataset.
+
+On the classical-poetry pilot, Jev identified the selected meanings and matched
+them to modern situations in all 24 excerpts. Removing the passage reduced
+situation-matching accuracy to 25%. This supports use of the supplied verses on
+these examples, not comprehensive or representative literary understanding.
+
 The dataset is synthetic, explicitly cued, and authored/reviewed by one model;
 related questions are correlated. Treat this as a useful baseline, then validate
 on independently annotated, natural Persian requests before relying on it.

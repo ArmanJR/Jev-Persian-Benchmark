@@ -46,6 +46,8 @@ def plan_jobs(dataset, suite, model):
     for s in scenarios:
         add(s, "main" if suite == "full" else "smoke", 0)
     if suite == "full":
+        for scenario in dataset.diagnostics:
+            add(scenario, scenario["condition"], 0)
         for s in scenarios:
             selected = [q for q in s["questions"] if "english" in q]
             if selected:

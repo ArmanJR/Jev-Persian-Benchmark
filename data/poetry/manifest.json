@@ -1,0 +1,60 @@
+{
+  "benchmark": "poetry",
+  "revision": "1.0.0",
+  "review": "Recorded extraction review; see REVIEW.md and review.json. Keys are not independently reannotated.",
+  "provenance": {
+    "source_repository": "Persian-Poetry-Semantic-Similarity-Benchmark",
+    "source_git_revision": "81f8d35e2a15d4380eec5fc98d79ebda3deefa08",
+    "source_note": "The two gherabat-book files were untracked in the source working tree; file hashes identify the imported data. The legacy file is order evidence only, not additional evaluation data.",
+    "reviewed_at": "2026-09-25"
+  },
+  "source_pdf": "Gherabat-main.pdf",
+  "counts": {
+    "choice": 560
+  },
+  "label_counts": {
+    "A": 104,
+    "B": 129,
+    "C": 150,
+    "D": 177
+  },
+  "preparation": {
+    "source_questions": 586,
+    "source_answer_keys": 1500,
+    "unused_answer_keys": 914,
+    "excluded_questions": 26,
+    "retained_questions": 560,
+    "repaired_questions": 40,
+    "reordered_options": 83,
+    "cleaned_option_fields": 53,
+    "text_replacements": 3
+  },
+  "smoke_scenarios": [
+    "p0006",
+    "p0012",
+    "p0014",
+    "p0024",
+    "p0680",
+    "p0682",
+    "p0746",
+    "p0755",
+    "p1470",
+    "p1489",
+    "p1495",
+    "p1496"
+  ],
+  "repeat_scenarios": [],
+  "thresholds": {
+    "noul": 0.5,
+    "high_confidence": 0.8,
+    "score_tolerance": 0.5
+  },
+  "sha256": {
+    "gold.jsonl": "bdfd955a6e73adeac44bf99750946e412cbe75c2f93343403b571d0567dcec0e",
+    "review.json": "c85766216bd7a2c3d1c4889cb8a1f9f3e9ce1baae0cf409c561b085e254e90c5",
+    "scenarios.jsonl": "17d495504c27c9d3628ee5fbdfb0257961ea729d1197f43e7c5db65655b06756",
+    "source/answer_keys.json": "d2d64b5abc8bae6229ea1e1b93cc3e129555e8f7946a8e29a76157bfb9c6f61e",
+    "source/legacy-41.json": "39eba0d3cd98b9892fa5ac03f948e33796f1b052f8ff7c80b034d6a6d3712e8a",
+    "source/questions-outliers.json": "b88bf4ce3d2ef5cb8fa309d3eb6167fb104ccc61a43eaf8935ca4ab59c3c0b49"
+  }
+}

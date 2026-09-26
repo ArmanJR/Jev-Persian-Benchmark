@@ -1,0 +1,349 @@
+{
+  "revision": "1.0.0",
+  "annotation": "Assistant-authored and assistant-reviewed pilot; no independent human annotation. Frozen before Jev evaluation. Public-domain source verse, newly authored candidate interpretations and situations. Not representative of each poet's work.",
+  "sources": [
+    "https://ganjoor.net/saadi/golestan/gbab1/sh10",
+    "https://ganjoor.net/saadi/golestan/gbab1/sh16",
+    "https://ganjoor.net/saadi/golestan/dibache",
+    "https://ganjoor.net/hafez/ghazal/sh1",
+    "https://ganjoor.net/hafez/ghazal/sh5",
+    "https://ganjoor.net/hafez/ghazal/sh80",
+    "https://ganjoor.net/hafez/ghazal/sh143",
+    "https://ganjoor.net/hafez/ghazal/sh199",
+    "https://ganjoor.net/moulavi/masnavi/daftar1/sh1",
+    "https://ganjoor.net/moulavi/masnavi/daftar1/sh11",
+    "https://ganjoor.net/moulavi/masnavi/daftar3/sh49",
+    "https://ganjoor.net/ferdousi/shahname/aghaz/sh1",
+    "https://ganjoor.net/ferdousi/shahname/aghaz/sh2",
+    "https://ganjoor.net/ferdousi/shahname/ardeshir/sh11",
+    "https://ganjoor.net/ferdousi/shahname/bahgoor/sh29"
+  ],
+  "situation_banks": {
+    "g1": [
+      {"excerpt_id": "c001", "text": "مسافری با دیدن اندوه فردی ناشناس در ایستگاه، کنارش می‌نشیند و با توجه به حرف‌های او گوش می‌دهد."},
+      {"excerpt_id": "c003", "text": "کارمندی میان درآمد بیشتر در کسب‌وکاری پرخطر و درآمد کمتر در شغلی مطمئن، دومی را برای حفظ امنیت انتخاب می‌کند."},
+      {"excerpt_id": "c006", "text": "عضو جلسه هنگام توضیح دیگران گوش می‌دهد و وقتی تصمیمی نیاز به اصلاح دارد، در فرصت مناسب نظرش را مطرح می‌کند."},
+      {"excerpt_id": "c019", "text": "تعمیرکار سالخورده‌ای با یادگرفتن روش تازه، از عهده تعمیر دستگاهی برمی‌آید که پیش از آن توان رفع عیبش را نداشت."}
+    ],
+    "g2": [
+      {"excerpt_id": "c002", "text": "دوستی که در روزهای موفقیت همواره همراه کسی بود، پس از ورشکستگی او نیز برای یافتن کار تازه کنارش می‌ماند."},
+      {"excerpt_id": "c005", "text": "پژوهشگری می‌بیند مهلت کارش روزبه‌روز کمتر می‌شود؛ از عقب‌انداختن کار دست می‌کشد و از زمان باقی‌مانده استفاده می‌کند."},
+      {"excerpt_id": "c008", "text": "مدیر یک گروه با همراهانش منصفانه و جوانمردانه رفتار می‌کند و در برابر گروه رقیب، اختلاف را با مدارا پیش می‌برد."},
+      {"excerpt_id": "c009", "text": "کسی به جای زیر نظر گرفتن خطاهای شخصی همکارش، به اصلاح رفتار خودش می‌پردازد و هر فرد را پاسخ‌گوی کار خودش می‌داند."}
+    ],
+    "g3": [
+      {"excerpt_id": "c004", "text": "کارآموزی با حضور مداوم در کنار همکاران دقیق، کم‌کم همان دقت و نظم را در کار خودش پیدا می‌کند."},
+      {"excerpt_id": "c007", "text": "تماشاگری که هیچ‌گاه شرایط امداد در بحران را تجربه نکرده، از جای امن خود دشواری کار امدادگران را ناچیز می‌پندارد."},
+      {"excerpt_id": "c010", "text": "گروهی مدت‌ها دنبال مشاوری بیرون از مجموعه می‌گردد، بی‌خبر از اینکه تخصص لازم از قبل در میان اعضای خودش وجود دارد."},
+      {"excerpt_id": "c020", "text": "کسی بدون بررسی پیامدها تعهدی را می‌پذیرد و بعد که گرفتاری‌های آن آشکار می‌شود، از تصمیم شتاب‌زده‌اش پشیمان می‌شود."}
+    ],
+    "g4": [
+      {"excerpt_id": "c011", "text": "سخنرانی در جمع دیگران را به صرفه‌جویی دعوت می‌کند، اما دور از چشم مردم همان منابع را بی‌حساب هدر می‌دهد."},
+      {"excerpt_id": "c012", "text": "کسی می‌داند موقعیت مساعد امروزش همیشگی نیست؛ تا امکان دارد از آن برای گره‌گشایی از کار دوستانش استفاده می‌کند."},
+      {"excerpt_id": "c014", "text": "مهاجری با وجود موفقیت در محل تازه، پیوسته دلتنگ زادگاه و خانواده‌اش است و برای بازگشت و دیدار آنان برنامه می‌ریزد."},
+      {"excerpt_id": "c022", "text": "خانواده‌ای با امکانات کافی اما معمولی، خود را برخوردار می‌داند و آرامش زندگی را به خرید پی‌درپی وسایل گران‌تر وابسته نمی‌کند."}
+    ],
+    "g5": [
+      {"excerpt_id": "c013", "text": "شنوندگان یک سخن، هرکدام تجربه و پیش‌فرض شخصی خود را به گوینده نسبت می‌دهند، بی‌آنکه منظور واقعی او را پرس‌وجو کنند."},
+      {"excerpt_id": "c015", "text": "فردی با هر افزایش دارایی، خواسته بزرگ‌تری پیدا می‌کند؛ هرچه بیشتر به دست می‌آورد، باز احساس می‌کند هیچ‌چیز برایش کافی نیست."},
+      {"excerpt_id": "c017", "text": "دو واحد سازمان از بخش‌های متفاوت یک گزارش نتیجه‌های ناسازگار می‌گیرند؛ با دیدن گزارش کامل، منشأ اختلافشان روشن می‌شود."},
+      {"excerpt_id": "c023", "text": "فردی به جای اندوهگین شدن از اتفاق بدی که هنوز رخ نداده، آرامش امروز را حفظ می‌کند و منتظر روشن شدن وضعیت می‌ماند."}
+    ],
+    "g6": [
+      {"excerpt_id": "c016", "text": "دو کارگاه مواد اولیه یکسانی می‌گیرند، اما به علت تفاوت در شیوه پردازش، محصول یکی سودمند و محصول دیگری نامناسب از کار درمی‌آید."},
+      {"excerpt_id": "c018", "text": "روی گزارشی پر از خطا عنوان «گزارش ممتاز» می‌گذارند؛ ارزیاب می‌گوید نام تازه، محتوای نادرست آن را ارزشمند نمی‌کند."},
+      {"excerpt_id": "c021", "text": "مسئولی برای آبادانی محله تلاش می‌کند و چه در برابر دوربین و چه دور از نگاه مردم، همان رفتار درست را ادامه می‌دهد."},
+      {"excerpt_id": "c024", "text": "مدیر مجموعه برای کسانی که وسایلشان در محل تحت مسئولیت او دزدیده شده، از بودجه مجموعه جایگزین فراهم می‌کند، بی‌آنکه منتی بگذارد."}
+    ]
+  },
+  "excerpts": [
+    {
+      "id": "c001", "poet": "saadi", "theme": "compassion",
+      "url": "https://ganjoor.net/saadi/golestan/gbab1/sh10", "start": 14, "lines": 2,
+      "verified_text": "تو کز محنتِ دیگران بی‌غمی\nنشاید که نامت نهند آدمی",
+      "modern_prose": "انسانیت با حساس بودن به رنج دیگران همراه است؛ بی‌تفاوتی به گرفتاری آنان با رفتار انسانی سازگار نیست.",
+      "review_note": "Humaneness, not biological membership. Listening compassionately need not solve the sufferer's problem. Familiar verse used as an easy anchor.",
+      "paraphrase": {
+        "options": ["انسانیت اقتضا می‌کند که نسبت به رنج دیگران بی‌تفاوت نباشیم.", "انسان برای حفظ آرامش خود باید از اندوه دیگران فاصله بگیرد.", "کسی که در زندگی رنج بیشتری کشیده، انسان بهتری است.", "همدلی با دیگران تنها زمانی ارزشمند است که مشکلشان را حل کنیم."],
+        "rationale": "The verse criticizes indifference to others' suffering; it does not praise personal suffering or require successful problem-solving."
+      },
+      "application": {"bank": "g1", "rationale": "Attentive companionship of a distressed stranger exemplifies compassion. The other situations illustrate risk preference, timely speech, and learning."}
+    },
+    {
+      "id": "c002", "poet": "saadi", "theme": "friendship",
+      "url": "https://ganjoor.net/saadi/golestan/gbab1/sh16", "start": 18, "lines": 4,
+      "verified_text": "دوست مشمار، آن که در نعمت زند\nلافِ یاریّ و برادرخواندگی\nدوست آن دانم که گیرد دستِ دوست\nدر پریشان‌حالی و درماندگی",
+      "modern_prose": "دوستی واقعی با ادعا در روزهای خوش ثابت نمی‌شود؛ دوست واقعی در زمان گرفتاری نیز همراه و یاری‌رسان است.",
+      "review_note": "Both couplets supplied so praise of support is contrasted explicitly with empty claims in prosperity.",
+      "paraphrase": {
+        "options": ["یار واقعی در تنگنا کمک می‌کند، نه اینکه فقط در خوشی دم از همراهی بزند.", "دوستی با افراد موفق ارزشمندتر است، زیرا گرفتاری کمتری برای ما دارند.", "برای حفظ دوستی باید همیشه گرفتاری خود را از دوستان پنهان نگه داشت.", "کسی که بیشتر از برادری سخن می‌گوید، وفاداری بیشتری در عمل دارد."],
+        "rationale": "The contrast is between professed friendship during prosperity and demonstrated support during hardship."
+      },
+      "application": {"bank": "g2", "rationale": "Continuing support after a friend's bankruptcy tests loyalty under changed fortune, not merely fairness to allies and rivals."}
+    },
+    {
+      "id": "c003", "poet": "saadi", "theme": "risk_tradeoff",
+      "url": "https://ganjoor.net/saadi/golestan/gbab1/sh16", "start": 16, "lines": 2,
+      "verified_text": "به دریا در، منافع بی‌شمار است\nو گر خواهی سلامت، بر کنار است",
+      "modern_prose": "ورود به کار پرخطر می‌تواند سود زیادی داشته باشد، ولی کسی که ایمنی را ترجیح می‌دهد باید از آن خطر فاصله بگیرد.",
+      "review_note": "Tests the risk/reward contrast, not an unconditional injunction to be bold or avoid all enterprise.",
+      "paraphrase": {
+        "options": ["سود فراوان ممکن است با خطر همراه باشد؛ امنیت بیشتر می‌تواند به چشم‌پوشی از آن سود نیاز داشته باشد.", "هرچه سود کاری بیشتر باشد، ایمنی آن نیز بیشتر است و جای نگرانی نمی‌ماند.", "برای رسیدن به سود باید همه خطرها را نادیده گرفت و احتیاط را کنار گذاشت.", "کناره‌گیری از کارهای پرخطر همیشه هم بیشترین سود را دارد و هم بیشترین امنیت را."],
+        "rationale": "The shore/sea contrast distinguishes safety from opportunity; neither guaranteed profit nor universal recklessness is asserted."
+      },
+      "application": {"bank": "g1", "rationale": "Choosing a secure lower-income job over a risky venture directly instantiates the safety/opportunity tradeoff."}
+    },
+    {
+      "id": "c004", "poet": "saadi", "theme": "companionship",
+      "url": "https://ganjoor.net/saadi/golestan/dibache", "start": 38, "lines": 8,
+      "verified_text": "گِلی خوش‌بوی در حمام روزی\nرسید از دست محبوبی به دستم\nبدو گفتم که «مشکی یا عبیری؟\nکه از بوی دلاویز تو مستم؟»\nبگفتا: «من گِلی ناچیز بودم\nو لیکن مدّتی با گُل نشستم\nکمال همنشین در من اثر کرد\nوگرنه من همان خاکم که هستم»",
+      "modern_prose": "همراهی با افراد شایسته می‌تواند صفات خوب آنان را به دیگران منتقل کند؛ ارزش تازه همیشه ذاتی نیست و گاهی از همنشینی پدید می‌آید.",
+      "review_note": "Full miniature story retained to disambiguate clay/flower. Modern application tests influence, not literal scent or social rank.",
+      "paraphrase": {
+        "options": ["همنشینی با خوبان می‌تواند ویژگی‌های پسندیده آنان را در ما پدید آورد.", "ارزش هرکس فقط از سرشت اولیه اوست و معاشرت هیچ تغییری ایجاد نمی‌کند.", "برای ارزشمند شدن کافی است ظاهر خود را شبیه افراد شایسته جلوه دهیم.", "تنها کسانی که از ابتدا کامل‌اند می‌توانند با افراد شایسته همراه شوند."],
+        "rationale": "Clay explicitly attributes its acquired fragrance to companionship with the flower rather than innate excellence."
+      },
+      "application": {"bank": "g3", "rationale": "The apprentice acquires diligence through sustained association with diligent colleagues; the other cases concern perspective, overlooked resources, or rashness."}
+    },
+    {
+      "id": "c005", "poet": "saadi", "theme": "time",
+      "url": "https://ganjoor.net/saadi/golestan/dibache", "start": 76, "lines": 2,
+      "verified_text": "عمر برف است و آفتابِ تموز\nاندکی ماند و خواجه غَرِّه هنوز",
+      "modern_prose": "زندگی مانند برف زیر آفتاب تابستان به‌سرعت از دست می‌رود، اما انسان ممکن است با وجود فرصت اندک همچنان غافل و آسوده‌خیال بماند.",
+      "review_note": "The situation is an analogy to dwindling opportunity, not a claim that a project deadline is literally a lifetime.",
+      "paraphrase": {
+        "options": ["عمر رو به پایان است، ولی انسان ممکن است همچنان از گذشت آن غافل بماند.", "گذر زمان نگرانی‌ها را خودبه‌خود برطرف می‌کند و نیازی به اقدام نیست.", "کسانی که ثروت بیشتری دارند فرصت زندگی طولانی‌تری در اختیار می‌گیرند.", "هرچه سن بالاتر می‌رود، فرصت‌های ازدست‌رفته دوباره در اختیار ما قرار می‌گیرد."],
+        "rationale": "Melting snow conveys the loss of remaining life; the final phrase rebukes heedless complacency."
+      },
+      "application": {"bank": "g2", "rationale": "Recognizing a shrinking deadline and ending procrastination responds to the warning against wasting a diminishing opportunity."}
+    },
+    {
+      "id": "c006", "poet": "saadi", "theme": "timely_speech",
+      "url": "https://ganjoor.net/saadi/golestan/dibache", "start": 92, "lines": 4,
+      "verified_text": "اگر چه پیشِ خردمند خامُشی ادب است\nبه وقتِ مصلحت آن به، که در سخن کوشی\nدو چیز طَیرهٔ عقل است، دم فرو بستن\nبه وقتِ گفتن و گفتن به وقتِ خاموشی",
+      "modern_prose": "سکوت همیشه بهتر نیست؛ خردمند باید موقعیت را بسنجد، هنگام نیاز سخن بگوید و هنگامی که سکوت مناسب است خاموش بماند.",
+      "review_note": "Both halves of the conditional advice are tested; distractors include unconditional silence and unconditional speech.",
+      "paraphrase": {
+        "options": ["خردمندی در تشخیص زمان مناسب سخن گفتن و زمان مناسب سکوت است.", "ادب آن است که در همه موقعیت‌ها خاموش بمانیم و هرگز اظهار نظر نکنیم.", "آدم خردمند باید در هر جمعی بیشتر از دیگران صحبت کند تا شناخته شود.", "برای درست سخن گفتن، دانستن موضوع کافی است و زمان گفتن اهمیتی ندارد."],
+        "rationale": "The passage explicitly rejects both silence when speech is needed and speech when silence is needed."
+      },
+      "application": {"bank": "g1", "rationale": "Listening during others' explanations and speaking when a decision needs correction embodies context-sensitive timing."}
+    },
+    {
+      "id": "c007", "poet": "hafez", "theme": "lived_experience",
+      "url": "https://ganjoor.net/hafez/ghazal/sh1", "start": 8, "lines": 2,
+      "verified_text": "شبِ تاریک و بیمِ موج و گِردابی چنین هایل\nکجا دانند حالِ ما سبک‌بارانِ ساحل‌ها؟",
+      "modern_prose": "کسانی که خود در آسایش و بیرون از خطرند، ممکن است حال و دشواری کسانی را که درگیر رنج و بحران‌اند درک نکنند.",
+      "review_note": "Tests the explicit experiential contrast; does not stipulate a single mystical identity for sea, shore, or speaker.",
+      "paraphrase": {
+        "options": ["آسودگان بیرون از خطر، از حال گرفتاران آن آگاهی و درک کافی ندارند.", "کسانی که از خطر دورند، همیشه وضعیت گرفتاران را بهتر از خود آنان می‌فهمند.", "کسی که به دشواری افتاده، حتماً پیش‌تر خطر را آگاهانه انتخاب کرده است.", "برای غلبه بر گرفتاری، باید از دیگران پنهان کرد که در خطر هستیم."],
+        "rationale": "The rhetorical question challenges secure outsiders' understanding, not the cause or concealment of the speaker's danger."
+      },
+      "application": {"bank": "g3", "rationale": "The safe observer underestimates an emergency they have not experienced, matching the shore/danger contrast."}
+    },
+    {
+      "id": "c008", "poet": "hafez", "theme": "forbearance",
+      "url": "https://ganjoor.net/hafez/ghazal/sh5", "start": 10, "lines": 2,
+      "verified_text": "آسایشِ دو گیتی تفسیرِ این دو حرف است\nبا دوستان مُرُوَّت با دشمنان مُدارا",
+      "modern_prose": "برای آرامش، با دوستان جوانمرد و منصف باش و در برخورد با دشمنان نیز از تندی و ستیز بی‌جا بپرهیز و مدارا کن.",
+      "review_note": "Forbearance is not equated with endorsing every demand or denying the existence of disagreement.",
+      "paraphrase": {
+        "options": ["آرامش با جوانمردی در حق دوستان و مدارا در برابر دشمنان پیوند دارد.", "برای آسایش باید با دشمنان سخت‌گیر بود و هر خواسته دوستان را پذیرفت.", "برای حفظ آرامش باید ارتباط با دوستان و دشمنان را یکسره قطع کرد.", "مدارا یعنی از همه باورهای خود بگذریم و هر خواسته مخالفان را تأیید کنیم."],
+        "rationale": "The two complementary prescriptions are generosity toward friends and restraint toward enemies, not withdrawal or unconditional agreement."
+      },
+      "application": {"bank": "g2", "rationale": "The group manager combines fairness to allies with forbearance toward rivals, preserving both relations in the verse."}
+    },
+    {
+      "id": "c009", "poet": "hafez", "theme": "personal_accountability",
+      "url": "https://ganjoor.net/hafez/ghazal/sh80", "start": 0, "lines": 4,
+      "verified_text": "عِیبِ رِندان مَکُن ای زاهدِ پاکیزه‌سِرِشت!\nکه گناهِ دِگَران بَر تو نخواهند نوشت\nمن اگر نیکم و گر بَد، تو برو خود را باش!\nهر کسی آن دِرَوَد عاقبتِ کار، که کِشت",
+      "modern_prose": "به جای عیب‌جویی از زندگی دیگران، مراقب رفتار خود باش؛ هرکس مسئول کار و پیامد عمل خویش است.",
+      "review_note": "Scoped to the passage's admonition against fault-finding, not a universal ban on reporting harm or holding public officials accountable.",
+      "paraphrase": {
+        "options": ["به جای عیب‌جویی از دیگران، به رفتار خود بپرداز؛ هرکس پاسخ‌گوی کردار خویش است.", "خطاهای دیگران به حساب ما نوشته می‌شود، پس باید همواره مراقب زندگی آنان باشیم.", "اگر دیگران بدرفتاری کنند، ما نیز برای رفتار نادرست خود مسئولیتی نخواهیم داشت.", "برای درستکار شناخته شدن کافی است خطاهای اطرافیان را بیشتر از خوبی‌هایشان بیان کنیم."],
+        "rationale": "The sowing/reaping image assigns consequences individually and supports self-scrutiny over others' personal faults."
+      },
+      "application": {"bank": "g2", "rationale": "The person redirects attention from a colleague's personal faults to their own conduct and individual responsibility."}
+    },
+    {
+      "id": "c010", "poet": "hafez", "theme": "overlooked_resources",
+      "url": "https://ganjoor.net/hafez/ghazal/sh143", "start": 0, "lines": 2,
+      "verified_text": "سال‌ها دل طلبِ جامِ جم از ما می‌کرد\nوآنچه خود داشت ز بیگانه تمنّا می‌کرد",
+      "modern_prose": "گاه چیزی را که خود از پیش در اختیار داریم نمی‌شناسیم و برای یافتنش بیهوده به بیرون از خود رو می‌آوریم.",
+      "review_note": "Only the explicit already-possessed/externally-sought relation is tested; no fixed theological gloss of the cup is imposed.",
+      "paraphrase": {
+        "options": ["گاه از داشته خود غافلیم و همان را از دیگران طلب می‌کنیم.", "برای رسیدن به هر خواسته‌ای باید داشته‌های خود را کنار بگذاریم.", "هرچه دیگران دارند از داشته‌های ما ارزشمندتر و سودمندتر است.", "آدمی هرچه بیشتر جست‌وجو کند، نیازش به شناخت خود کمتر می‌شود."],
+        "rationale": "The second hemistich explicitly contrasts possession with unrecognized possession and outward seeking."
+      },
+      "application": {"bank": "g3", "rationale": "Searching externally for expertise already present inside the team preserves the relation without copying cup or treasure imagery."}
+    },
+    {
+      "id": "c011", "poet": "hafez", "theme": "hypocrisy",
+      "url": "https://ganjoor.net/hafez/ghazal/sh199", "start": 0, "lines": 4,
+      "verified_text": "واعظان کاین جلوه در محراب و منبر می‌کنند\nچون به خلوت می‌روند آن کارِ دیگر می‌کنند!\nمشکلی دارم، زِ دانشمندِ مجلس بازپرس\nتوبه‌فرمایان، چرا خود توبه کم‌تر می‌کنند؟",
+      "modern_prose": "گوینده از کسانی انتقاد می‌کند که در جمع دیگران را به درستکاری دعوت می‌کنند، اما در خلوت خود به همان توصیه‌ها عمل نمی‌کنند.",
+      "review_note": "The second couplet clarifies criticism of inconsistency; no allegation is made about an unspecified real religious community.",
+      "paraphrase": {
+        "options": ["شاعر ناسازگاری میان پند دادن علنی و رفتار شخصی پنددهندگان را نقد می‌کند.", "شاعر می‌گوید هرکس در خلوت عبادت کند از کسی که در جمع عبادت می‌کند برتر است.", "شاعر کم بودن فرصت سخنرانی را علت اصلی رفتار نادرست پنددهندگان می‌داند.", "شاعر معتقد است پند دادن به دیگران، انسان را از اصلاح رفتار خودش بی‌نیاز می‌کند."],
+        "rationale": "The target is the gap between public moral instruction and private conduct, not privacy itself or inadequate speaking time."
+      },
+      "application": {"bank": "g4", "rationale": "Publicly urging conservation while privately wasting resources exemplifies the same preach/practice inconsistency."}
+    },
+    {
+      "id": "c012", "poet": "hafez", "theme": "fleeting_opportunity",
+      "url": "https://ganjoor.net/hafez/ghazal/sh5", "start": 4, "lines": 2,
+      "verified_text": "ده‌روزه مِهرِ گردون افسانه است و افسون\nنیکی به جای یاران فرصت شمار یارا",
+      "modern_prose": "به مساعدت گذرای روزگار دل نبند؛ تا فرصت و توان داری، آن را برای نیکی به دوستان به کار بگیر.",
+      "review_note": "Both impermanence and the specific use of opportunity for friends are required; generic urgency alone is a weaker match.",
+      "paraphrase": {
+        "options": ["خوش‌اقبالی پایدار نیست؛ فرصت نیکی کردن به دوستان را از دست نده.", "چون خوش‌اقبالی پایدار نیست، کمک به دوستان نیز هیچ ارزشی ندارد.", "نیکی به دوستان تضمین می‌کند که روزگار همیشه مطابق خواسته ما بگردد.", "کمک به دوستان را باید تا زمانی عقب انداخت که از آینده کاملاً مطمئن شویم."],
+        "rationale": "Temporary fortune motivates timely kindness; it neither negates kindness nor guarantees permanent prosperity."
+      },
+      "application": {"bank": "g4", "rationale": "Using a temporary favorable position to help friends combines both halves, unlike contentment or homesickness alone."}
+    },
+    {
+      "id": "c013", "poet": "rumi", "theme": "projection",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar1/sh1", "start": 10, "lines": 2,
+      "verified_text": "هر کسی از ظَنّ خود شد یار من\nاز درون من نجُست اَسرار من",
+      "modern_prose": "دیگران از روی گمان‌ها و پیش‌فرض‌های خود با من همراه شدند، اما برای شناختن حقیقت درونی و منظور من جست‌وجو نکردند.",
+      "review_note": "Preserves the speaker/listener relation. Does not equate every disagreement with deliberate deception.",
+      "paraphrase": {
+        "options": ["دیگران برداشت خود را به من نسبت دادند، بی‌آنکه حقیقت درونم را بشناسند.", "هرکس به من نزدیک شد، به کمک گمان خود حقیقت درونم را کاملاً شناخت.", "من عمداً برای هر همراه، شخصیتی متفاوت ساختم تا هیچ‌کس مرا نشناسد.", "برای شناختن هر فرد، تصور اولیه ما کافی است و نیازی به پرسیدن نیست."],
+        "rationale": "The complaint is projection without inquiry, not successful intuitive understanding or a stated intent to deceive."
+      },
+      "application": {"bank": "g5", "rationale": "Listeners impose their own experiences on the speaker instead of investigating the speaker's intended meaning."}
+    },
+    {
+      "id": "c014", "poet": "rumi", "theme": "separation",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar1/sh1", "start": 6, "lines": 2,
+      "verified_text": "هر کسی کو دور ماند از اصلِ خویش\nباز جوید روزگارِ وصلِ خویش",
+      "modern_prose": "کسی که از ریشه و سرچشمه خود جدا افتاده، مشتاق بازگشت و دوباره پیوستن به آن می‌شود.",
+      "review_note": "Homecoming is an analogy to separation/reunion, not a claim that Rumi's spiritual origin means only geographic birthplace.",
+      "paraphrase": {
+        "options": ["دوری از اصل و ریشه، شوق بازگشت و پیوند دوباره را برمی‌انگیزد.", "دوری از ریشه‌ها باعث می‌شود آدمی برای همیشه آن‌ها را فراموش کند.", "برای رسیدن به آرامش باید هر پیوندی با گذشته را به‌کلی از میان برد.", "کسی که از اصل خود دور شده، دیگر هیچ راهی برای پیوند دوباره ندارد."],
+        "rationale": "The statement links separation to a desire for reunion; it asserts neither guaranteed reunion nor its impossibility."
+      },
+      "application": {"bank": "g4", "rationale": "The migrant's longing for reunion despite success elsewhere preserves the separation/return relation."}
+    },
+    {
+      "id": "c015", "poet": "rumi", "theme": "insatiability",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar1/sh1", "start": 38, "lines": 4,
+      "verified_text": "گر بریزی بَحر را در کوزه‌ای\nچند گنجد‌ قسمتِ یک روزه‌ای؟\nکوزه‌ٔ چشمِ حریصان پُر نشد\nتا صدف قانع نشد پُر دُر نشد",
+      "modern_prose": "توان بهره‌بردن ما محدود است، اما حرص با انباشتن بیشتر سیر نمی‌شود؛ قناعت در برابر این سیری‌ناپذیری قرار می‌گیرد.",
+      "review_note": "The pearl image is treated as poetic analogy, not a scientific claim about pearl formation. Shared source with c013/c014 is documented.",
+      "paraphrase": {
+        "options": ["حرص با داشتن بیشتر پایان نمی‌یابد؛ قناعت راهی برای رهایی از این سیری‌ناپذیری است.", "اگر دارایی به اندازه کافی زیاد شود، هر انسان حریصی خودبه‌خود قانع خواهد شد.", "قناعت یعنی همه نیازهای واقعی خود را نادیده بگیریم و از هر بهره‌ای صرف‌نظر کنیم.", "زیاد بودن خواسته‌ها همیشه نشانه توانایی ما برای استفاده از همه امکانات است."],
+        "rationale": "The limited vessel contrasts with inexhaustible greed; contentment is not denial of all legitimate needs."
+      },
+      "application": {"bank": "g5", "rationale": "Ever-rising wants despite accumulating possessions demonstrate the unfilled vessel of greed."}
+    },
+    {
+      "id": "c016", "poet": "rumi", "theme": "different_results",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar1/sh11", "start": 46, "lines": 8,
+      "verified_text": "هر دو گون زنبور خوردند از محل\nلیک شد زآن نیش و زین دیگر عسل\nهر دو گون آهو گیا خوردند و آب\nزین یکی سرگین شد و زآن مُشکِ ناب\nهر دو نی خوردند از یک آبخَور\nاین یکی خالی و آن پر از شکر\nصد هزاران این چنین اَشباه بین\nفرقشان هفتاد ساله راه بین",
+      "modern_prose": "شباهت در ظاهر یا بهره‌گرفتن از منبعی یکسان، یکسان بودن حاصل و ارزش را تضمین نمی‌کند؛ آنچه از هرکس یا هرچیز پدید می‌آید می‌تواند بسیار متفاوت باشد.",
+      "review_note": "Analogy concerns common inputs and differing outcomes, not zoological accuracy or reducing the full spiritual passage to manufacturing.",
+      "paraphrase": {
+        "options": ["از شباهت ظاهری یا خوراک مشترک نمی‌توان یکسان بودن حاصل و ارزش را نتیجه گرفت.", "هر دو موجودی که از منبعی یکسان بهره ببرند، ناگزیر نتیجه‌ای یکسان پدید می‌آورند.", "برای سنجیدن ارزش هر چیز، دانستن ظاهر و نام آن کافی است و حاصلش مهم نیست.", "هر تفاوتی در نتیجه فقط از تفاوت خوراک می‌آید و ویژگی دریافت‌کننده بی‌اثر است."],
+        "rationale": "Repeated shared-source/different-output examples challenge inference from superficial likeness to equal value."
+      },
+      "application": {"bank": "g6", "rationale": "Identical raw materials yield different products because processing differs; this matches the shared-input/different-result relation."}
+    },
+    {
+      "id": "c017", "poet": "rumi", "theme": "partial_evidence",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar3/sh49", "start": 0, "lines": 22,
+      "verified_text": "پیل اندر خانهٔ تاریک بود\nعرضه را آورده بودندش هُنود\nاز برای دیدنش مَردم بسی\nاندر آن ظلمت همی‌شد هر کسی\nدیدنش با چشم چون ممکن نبود\nاندر آن تاریکیش کف می‌بِسود\nآن یکی را کف به خرطوم اوفتاد\nگفت همچون ناودانست این نهاد\nآن یکی را دست بر گوشش رسید\nآن برو چون بادبیزن شد پدید\nآن یکی را کف چو بر پایش بسود\nگفت شکل پیل دیدم چون عمود\nآن یکی بر پشت او بنهاد دست\nگفت خود این پیل چون تختی بدست\nهمچنین هر یک به جزوی که رسید\nفهم آن می‌کرد هر جا می‌شنید\nاز نظرگه گفتشان شد مختلف\nآن یکی دالش لقب داد این الف\nدر کف هر کس اگر شمعی بدی\nاختلاف از گفتشان بیرون شدی\nچشم حس همچون کف دستست و بس\nنیست کف را بر همه‌ی او دست‌رس",
+      "modern_prose": "وقتی هرکس فقط بخش کوچکی از یک واقعیت را می‌شناسد و آن را کل می‌پندارد، برداشت‌های ناسازگار پدید می‌آید؛ دسترسی به دیدی کامل‌تر می‌تواند منشأ اختلاف را برطرف کند.",
+      "review_note": "Complete local story provided. Tests partial evidence versus whole, not a definitive claim about all religious or metaphysical disagreements.",
+      "paraphrase": {
+        "options": ["شناخت محدودِ هر فرد از بخشی از واقعیت می‌تواند به توصیف‌های متفاوت از کل آن بینجامد.", "آدم‌ها در این داستان حقیقت را کاملاً می‌دانند، اما عمداً یکدیگر را فریب می‌دهند.", "واقعیت با هر بار لمس شدن عوض می‌شود و به همین سبب توصیف‌ها متفاوت است.", "هر برداشت جزئی به‌تنهایی تمام واقعیت را نشان می‌دهد و به اطلاعات بیشتر نیازی نیست."],
+        "rationale": "The object is stable; differing contact with its parts causes disagreement, and the proposed light changes access to evidence."
+      },
+      "application": {"bank": "g5", "rationale": "Departments using different fragments of one report disagree until the complete report exposes the basis of their disagreement."}
+    },
+    {
+      "id": "c018", "poet": "rumi", "theme": "name_and_content",
+      "url": "https://ganjoor.net/moulavi/masnavi/daftar1/sh11", "start": 100, "lines": 4,
+      "verified_text": "زشتی آن نامِ بَد از حرف نیست\nتلخی آن آبِ بحر از ظرف نیست\nحرفْ ظرف آمد در او معنی چو آب\nبحرِ معنی عِندَهُ اُمُّ الکِتاب",
+      "modern_prose": "ارزش یا ناپسندی یک نام از معنایی می‌آید که در آن است، نه از شکل حروف؛ عوض کردن ظرف یا عنوان، ماهیت محتوا را عوض نمی‌کند.",
+      "review_note": "Tests the explicit container/content analogy. The Arabic closing phrase is retained as part of the authentic verse, not used to demand external exegesis.",
+      "paraphrase": {
+        "options": ["ارزش نام و سخن به معنای آن وابسته است، نه صرفاً به ظاهر حروف و قالب آن.", "اگر برای چیزی نام زیباتری انتخاب کنیم، ماهیت آن نیز خودبه‌خود بهتر می‌شود.", "معنای سخن اهمیتی ندارد و فقط آراستگی واژه‌هاست که آن را ارزشمند می‌کند.", "نام‌های ناخوشایند تنها به سبب دشواری تلفظشان ناپسندند، نه معنایی که دارند."],
+        "rationale": "Letters are likened to a vessel and meaning to its contents; bitterness belongs to the water rather than the vessel."
+      },
+      "application": {"bank": "g6", "rationale": "Renaming a faulty report does not improve its substance; the evaluator distinguishes label from content."}
+    },
+    {
+      "id": "c019", "poet": "ferdowsi", "theme": "knowledge_and_ability",
+      "url": "https://ganjoor.net/ferdousi/shahname/aghaz/sh1", "start": 26, "lines": 2,
+      "verified_text": "توانا بُوَد هر که دانا بُوَد\nز دانش، دل پیر، بُرنا بود",
+      "modern_prose": "دانش سرچشمه توانایی است و آموختن می‌تواند حتی در سالخوردگی به انسان توان و تازگی ببخشد.",
+      "review_note": "Youthfulness is figurative vitality, not reversal of chronological age. Familiar easy anchor rather than a hard literary item.",
+      "paraphrase": {
+        "options": ["دانش توانایی می‌آورد و حتی در پیری می‌تواند مایه پویایی و تازگی شود.", "تنها جوانان می‌توانند چیزی بیاموزند و پیری هر نوع توانایی را از بین می‌برد.", "قدرت جسمانی خودبه‌خود انسان را دانا می‌کند و نیازی به آموختن نیست.", "دانش ارزشمند است، اما در توانایی انجام کارها هیچ تغییری ایجاد نمی‌کند."],
+        "rationale": "Knowledge is presented as enabling capability and invigorating the old, not guaranteeing strength or literal youth."
+      },
+      "application": {"bank": "g1", "rationale": "An older repairer gains a previously absent capability through learning, preserving both knowledge/ability and age contrasts."}
+    },
+    {
+      "id": "c020", "poet": "ferdowsi", "theme": "rashness",
+      "url": "https://ganjoor.net/ferdousi/shahname/aghaz/sh2", "start": 14, "lines": 2,
+      "verified_text": "کسی کو خِرَد را نَدارَد زِ پیش\nدِلش گَردَد از کَردهٔ خویش ریش",
+      "modern_prose": "کسی که خرد را راهنمای عمل خود نکند، ممکن است از پیامد کار خودش آزرده و پشیمان شود.",
+      "review_note": "Emphasizes self-caused regret from unconsidered action, not that every suffering person has acted unwisely.",
+      "paraphrase": {
+        "options": ["عمل کردن بی‌راهنمایی خرد، می‌تواند انسان را از کرده خود پشیمان و آزرده کند.", "هرکس از کاری پشیمان شود، ثابت می‌شود که توانایی اندیشیدن را به‌کلی ندارد.", "برای دور ماندن از پشیمانی باید همیشه بدون فکر و با تکیه بر احساس عمل کرد.", "رنج انسان فقط از رفتار دیگران پدید می‌آید و انتخاب‌های خودش نقشی ندارد."],
+        "rationale": "The verse connects failing to use wisdom with distress at one's own actions; the converse and universal external blame do not follow."
+      },
+      "application": {"bank": "g3", "rationale": "An unexamined commitment brings subsequent regret through the person's own decision."}
+    },
+    {
+      "id": "c021", "poet": "ferdowsi", "theme": "integrity",
+      "url": "https://ganjoor.net/ferdousi/shahname/ardeshir/sh11", "start": 14, "lines": 2,
+      "verified_text": "خنک آنک آباد دارد جهان\nبود آشکارای او چون نهان",
+      "modern_prose": "خوشا کسی که به آبادانی جهان کمک می‌کند و رفتار آشکار و پنهانش با هم یکسان و درست است.",
+      "review_note": "Includes both constructive action and public/private consistency. Contrast with c011 is intentional but the option banks differ.",
+      "paraphrase": {
+        "options": ["کسی ستوده است که سازنده و نیکوکار باشد و ظاهر و باطن رفتارش با هم سازگار بماند.", "برای نیک‌نامی کافی است در برابر مردم درستکار جلوه کنیم، هرچند در خلوت خلاف آن باشیم.", "هرکس به آبادانی کمک کند، دیگر لازم نیست میان گفتار و رفتار خود هماهنگی داشته باشد.", "نیکی فقط زمانی ارزش دارد که هیچ‌کس از آن باخبر نشود و همیشه پنهان بماند."],
+        "rationale": "The praise joins making the world flourish with consistency between what is seen and hidden, not secrecy or mere appearance."
+      },
+      "application": {"bank": "g6", "rationale": "The neighborhood official both improves the community and maintains the same good conduct with and without an audience."}
+    },
+    {
+      "id": "c022", "poet": "ferdowsi", "theme": "contentment",
+      "url": "https://ganjoor.net/ferdousi/shahname/ardeshir/sh11", "start": 30, "lines": 2,
+      "verified_text": "توانگر شود هرک خرسند گشت\nگل نوبهارش برومند گشت",
+      "modern_prose": "احساس برخورداری و شکوفایی با خرسندی و قناعت پیوند دارد؛ ثروتمندی فقط به زیاد شدن دارایی وابسته نیست.",
+      "review_note": "Contentment, not passivity toward deprivation; the situation explicitly states adequate resources to avoid implying that need should be ignored.",
+      "paraphrase": {
+        "options": ["خرسندی و قناعت می‌تواند احساس بی‌نیازی و برخورداری به انسان ببخشد.", "خرسندی فقط پس از داشتن دارایی بسیار ممکن است و به نگاه انسان ربطی ندارد.", "برای برخوردار بودن باید همیشه داشته خود را ناکافی دانست و بیشتر خواست.", "هرکس از زندگی راضی باشد، ناگزیر از آموختن و کوشش کردن دست می‌کشد."],
+        "rationale": "The passage links contentment to a form of wealth and flourishing; it does not equate contentment with stopping effort."
+      },
+      "application": {"bank": "g4", "rationale": "The adequately provided family does not tie well-being to endless luxury consumption, illustrating contentment rather than temporary opportunity."}
+    },
+    {
+      "id": "c023", "poet": "ferdowsi", "theme": "anticipated_trouble",
+      "url": "https://ganjoor.net/ferdousi/shahname/ardeshir/sh11", "start": 36, "lines": 2,
+      "verified_text": "چهارم که دل دور داری ز غم\nز نا آمده دل نداری دژم",
+      "modern_prose": "از چیزی که هنوز رخ نداده، پیشاپیش اندوهگین و دل‌تنگ نشو؛ غمِ اتفاق نیفتاده را به امروز نیاور.",
+      "review_note": "The numbered opening is retained verbatim. Not interpreted as a ban on sensible planning or preparation for risks.",
+      "paraphrase": {
+        "options": ["نباید پیش از رخ دادن گرفتاری، دل را گرفتار اندوه آن کرد.", "برای آینده نباید هیچ برنامه‌ای داشت، چون فکر کردن به فردا همیشه نادرست است.", "اگر از آینده نگران باشیم، اتفاق بد حتماً رخ می‌دهد و راه گریزی ندارد.", "بهترین راه آسودگی آن است که مشکلات رخ‌داده را همواره انکار کنیم."],
+        "rationale": "The restriction concerns grief over what has not arrived, not preparation, magical causation, or denying present problems."
+      },
+      "application": {"bank": "g5", "rationale": "Preserving today's composure rather than grieving over an unoccurred bad event directly matches the temporal distinction."}
+    },
+    {
+      "id": "c024", "poet": "ferdowsi", "theme": "compensation",
+      "url": "https://ganjoor.net/ferdousi/shahname/bahgoor/sh29", "start": 76, "lines": 8,
+      "verified_text": "وگر در گذشته ز شب چند پاس\nبدزدد ز درویش دزدی پلاس\nبه تاوانش دیبا فرستم ز گنج\nبشویم دل غمگنان را ز رنج\nوگر گوسفندی برند از رمه\nبه تیره شب و روزگار دمه\nیکی اسپ پرمایه تاوان دهم\nمبادا که بر وی سپاسی نهم",
+      "modern_prose": "گوینده تعهد می‌کند زیان کسانی را که مالشان دزدیده شده از خزانه جبران کند و در برابر این جبران بر آنان منت نگذارد.",
+      "review_note": "The excerpt explicitly promises restitution, not a modern legal rule or unconditional endorsement of all the surrounding king's policies.",
+      "paraphrase": {
+        "options": ["گوینده جبران بی‌منتِ خسارتِ مال‌باختگان را بر عهده می‌گیرد.", "گوینده می‌گوید مال‌باختگان باید با هزینه خود خسارتشان را جبران کنند.", "گوینده کمک به آسیب‌دیدگان را به سپاس‌گزاری و ستایش آنان مشروط می‌کند.", "گوینده فقط وعده پیدا کردن دزد را می‌دهد و جبران خسارت را نمی‌پذیرد."],
+        "rationale": "Treasury-funded replacement and absence of imposed obligation are explicit; hunting the thief alone is not the promised act."
+      },
+      "application": {"bank": "g6", "rationale": "The responsible manager funds replacement for theft victims without demanding gratitude, preserving restitution and absence of condescension."}
+    }
+  ]
+}
