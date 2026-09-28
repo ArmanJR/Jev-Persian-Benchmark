@@ -9,6 +9,7 @@ import time
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from .data import payload
 
@@ -75,7 +76,32 @@ def redact(value):
     return value
 
 
-def error_details(exc):
+def local_api_url(value):
+    """Accept a loopback API root without credentials or request-specific components."""
+    message = (
+        "Local URL must be an HTTP(S) loopback root without credentials, path, query or fragment"
+    )
+    try:
+        parsed = urlsplit(value)
+        valid = (
+            parsed.scheme in {"http", "https"}
+            and parsed.hostname in {"localhost", "127.0.0.1", "::1"}
+            and parsed.username is None
+            and parsed.password is None
+            and parsed.path in {"", "/"}
+            and not parsed.query
+            and not parsed.fragment
+            and parsed.port != 0
+            and not any(character.isspace() for character in value)
+        )
+    except ValueError:
+        raise ValueError(message) from None
+    if not valid:
+        raise ValueError(message)
+    return value.rstrip("/")
+
+
+def error_details(exc, *, local=False):
     status = getattr(exc, "status", None)
     advice = {
         400: "Check request configuration.",
@@ -85,19 +111,32 @@ def error_details(exc):
         422: "Check request schema and model configuration.",
         429: "Rate limit persisted after bounded SDK retries.",
     }
+    if local:
+        advice.update(
+            {
+                401: "--local-url supports unauthenticated servers; check local server settings.",
+                403: "Check local server access settings.",
+                None: "Check that the local server is running and reachable from this session.",
+            }
+        )
     return {
         "type": type(exc).__name__,
         "http_status": status,
         "message": advice.get(
             status, "Request failed after SDK handling; inspect error type and raw response."
         ),
-        "request_id": getattr(exc, "headers", {}).get("x-typesafe-request-id"),
+        "request_id": getattr(exc, "headers", {}).get("x-typesafe-request-id")
+        or getattr(exc, "headers", {}).get("x-request-id"),
     }
 
 
-def run(dataset, output, suite="full", model="jev-1.13.0", client=None):
+def run(dataset, output, suite="full", model="jev-1.13.0", client=None, *, local_url=None):
     from typesafe_sdk import RetryPolicy, TypeSafeClient, TypeSafeError
 
+    if local_url is not None:
+        local_url = local_api_url(local_url)
+        if client is not None:
+            raise ValueError("Pass either client or local_url, not both")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     jobs = plan_jobs(dataset, suite, model)
@@ -120,13 +159,29 @@ def run(dataset, output, suite="full", model="jev-1.13.0", client=None):
         },
         "jobs": jobs,
     }
+    if local_url is not None:
+        meta["local_url"] = local_url
+        LOG.info("Using local API at %s with model %s", local_url, model)
     write_json(output / "run.json", meta)
     owned = client is None
     interrupted, abort, completed = False, None, 0
     try:
         if owned:
+            local_options = {}
+            if local_url is not None:
+                import httpx2
+
+                # The SDK requires a key. Never forward the user's cloud key or proxy local traffic.
+                local_options = {
+                    "api_key": "local-unused",
+                    "base_url": local_url,
+                    "http_client": httpx2.Client(timeout=20.0, trust_env=False),
+                }
             client = TypeSafeClient(
-                model=model, timeout=20.0, retry=RetryPolicy(max_retries=2, timeout=45.0)
+                model=model,
+                timeout=20.0,
+                retry=RetryPolicy(max_retries=2, timeout=45.0),
+                **local_options,
             )
         with (output / "requests.jsonl").open("x", encoding="utf-8") as stream:
 
@@ -153,7 +208,8 @@ def run(dataset, output, suite="full", model="jev-1.13.0", client=None):
                         status="ok",
                         raw_response=raw.json(),
                         raw_response_text=raw.text,
-                        request_id=raw.headers.get("x-typesafe-request-id"),
+                        request_id=raw.headers.get("x-typesafe-request-id")
+                        or raw.headers.get("x-request-id"),
                         actual_request=json.loads(raw.request.content),
                         returned_model=response.model,
                         usage=response.usage.model_dump(),
@@ -175,7 +231,7 @@ def run(dataset, output, suite="full", model="jev-1.13.0", client=None):
                             response.model,
                         )
                 except TypeSafeError as exc:
-                    error = error_details(exc)
+                    error = error_details(exc, local=local_url is not None)
                     event.update(
                         status="error",
                         error=error,
@@ -203,9 +259,11 @@ def run(dataset, output, suite="full", model="jev-1.13.0", client=None):
             "Interrupted; completed responses are preserved. Rebuild with the report command."
         )
     except TypeSafeError as exc:
-        abort = error_details(exc)
+        abort = error_details(exc, local=local_url is not None)
         abort["message"] = (
-            "Client configuration failed; check TYPESAFE_API_KEY and TYPESAFE_BASE_URL."
+            "Local client configuration failed; check the local server URL."
+            if local_url is not None
+            else "Client configuration failed; check TYPESAFE_API_KEY and TYPESAFE_BASE_URL."
         )
         LOG.error("%s: %s", abort["type"], abort["message"])
     finally:

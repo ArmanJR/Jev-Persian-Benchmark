@@ -9,7 +9,7 @@ from typesafe_sdk import RetryPolicy, TypeSafeClient
 from jev_benchmark.cli import main
 from jev_benchmark.data import THRESHOLDS, load_dataset, payload, validate_cases
 from jev_benchmark.report import analyze, build_report, read_events
-from jev_benchmark.runner import SCORING_VERSION, plan_jobs, run
+from jev_benchmark.runner import SCORING_VERSION, local_api_url, plan_jobs, run
 from jev_benchmark.scoring import score_answer, summarize
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -314,6 +314,139 @@ def test_sdk_integration_and_offline_reproduction(dataset, tmp_path):
     assert events[1]["actual_request"]["state"] == dataset.smoke[0]["state"]
     with pytest.raises(FileExistsError):
         run(dataset, output, suite="smoke", client=object())
+
+
+@pytest.mark.parametrize("cloud_key", [None, "cloud-secret-sentinel"])
+def test_local_cli_uses_frozen_payloads_without_cloud_configuration(
+    dataset, tmp_path, monkeypatch, cloud_key
+):
+    if cloud_key is None:
+        monkeypatch.delenv("TYPESAFE_API_KEY", raising=False)
+    else:
+        monkeypatch.setenv("TYPESAFE_API_KEY", cloud_key)
+    monkeypatch.setenv("TYPESAFE_BASE_URL", "https://cloud.invalid")
+    monkeypatch.setenv("HTTP_PROXY", "http://proxy.invalid:9999")
+    requests, clients = [], []
+    model = "jeff-qwen3.5-2b"
+
+    def handler(request):
+        requests.append(request)
+        return httpx2.Response(
+            200,
+            json=synthetic_response(json.loads(request.content), dataset, model=model),
+            headers={"x-request-id": f"local-{len(requests)}"},
+        )
+
+    real_http_client = httpx2.Client
+
+    def http_client(**kwargs):
+        assert kwargs["trust_env"] is False
+        client = real_http_client(transport=httpx2.MockTransport(handler), **kwargs)
+        clients.append(client)
+        return client
+
+    monkeypatch.setattr(httpx2, "Client", http_client)
+    output = tmp_path / "local"
+    assert (
+        main(
+            [
+                "run",
+                "--data",
+                str(ROOT / "data"),
+                "--suite",
+                "smoke",
+                "--model",
+                model,
+                "--local-url",
+                "http://127.0.0.1:8765/",
+                "--output",
+                str(output),
+            ]
+        )
+        == 0
+    )
+    assert clients[0].is_closed
+    assert len(requests) == 2
+    for request, job in zip(requests, plan_jobs(dataset, "smoke", model), strict=True):
+        assert str(request.url) == "http://127.0.0.1:8765/v1/systemone"
+        assert request.headers["authorization"] == "Bearer local-unused"
+        body = json.loads(request.content)
+        assert body == job["request"]
+        for qid, question in body["questions"].items():
+            if isinstance(question.get("criteria"), dict):
+                assert list(question["criteria"]) == list(
+                    job["request"]["questions"][qid]["criteria"]
+                )
+    meta = json.loads((output / "run.json").read_text())
+    assert meta["local_url"] == "http://127.0.0.1:8765"
+    events, _ = read_events(output / "requests.jsonl")
+    assert events[1]["request_id"] == "local-1"
+    summary = build_report(output)
+    assert summary["completion"]["valid_answers"] == 12
+    assert summary["model_mismatch_requests"] == 0
+    before = {name: (output / name).read_bytes() for name in ("summary.json", "report.md")}
+    assert main(["report", str(output)]) == 0
+    assert all((output / name).read_bytes() == content for name, content in before.items())
+    assert "cloud-secret-sentinel" not in (output / "requests.jsonl").read_text()
+
+
+def test_local_authentication_failure_is_actionable(dataset, tmp_path, monkeypatch):
+    real_http_client = httpx2.Client
+    transport = httpx2.MockTransport(
+        lambda request: httpx2.Response(401, json={}, headers={"x-request-id": "local-error"})
+    )
+    monkeypatch.setattr(
+        httpx2, "Client", lambda **kwargs: real_http_client(transport=transport, **kwargs)
+    )
+    output = tmp_path / "local"
+    run(dataset, output, suite="smoke", model="jeff-qwen3.5-2b", local_url="http://localhost:8765")
+    summary = build_report(output)
+    assert summary["completion"]["finished_requests"] == 1
+    assert summary["completion"]["failed_answers"] == 6
+    assert summary["completion"]["not_completed"] == 6
+    abort = json.loads((output / "completion.json").read_text())["abort"]
+    assert "unauthenticated servers" in abort["message"]
+    assert abort["request_id"] == "local-error"
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://example.com",
+        "file:///tmp/server",
+        "http://localhost:8765/v1",
+        "http://user:password@localhost:8765",
+        "http://localhost?key=secret",
+        "http://localhost#fragment",
+        "http://localhost:not-a-port",
+        "http://localhost:65536",
+        "http://localhost:0",
+        "http://[::1",
+        "",
+        "http://localhost\n",
+    ],
+)
+def test_invalid_local_url_rejected_before_run_creation(dataset, tmp_path, url):
+    output = tmp_path / "invalid"
+    with pytest.raises(ValueError, match="HTTP.*loopback root"):
+        run(dataset, output, suite="smoke", local_url=url)
+    assert not output.exists()
+
+
+@pytest.mark.parametrize(
+    "url", ["http://localhost:8765", "http://127.0.0.1", "https://[::1]:8765/"]
+)
+def test_loopback_api_roots(url):
+    assert local_api_url(url) == url.rstrip("/")
+
+
+def test_local_cli_requires_explicit_model_and_rejects_conflicting_client(dataset, tmp_path):
+    output = tmp_path / "local"
+    assert main(["run", "--local-url", "http://localhost:8765", "--output", str(output)]) == 2
+    assert not output.exists()
+    with pytest.raises(ValueError, match="either client or local_url"):
+        run(dataset, output, client=object(), local_url="http://localhost:8765")
+    assert not output.exists()
 
 
 @pytest.mark.parametrize(

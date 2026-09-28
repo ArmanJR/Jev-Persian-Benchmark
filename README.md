@@ -1,10 +1,11 @@
 # Jev Persian Benchmark
 
-Benchmarks for **Jev** on **480 authored general Persian questions** and a
-**24-excerpt classical Persian poetry pilot** (48 main questions plus 48 controls).
+Benchmarks for **Jev and Jeff** on **480 authored general Persian questions**,
+**560 literary questions**, and a **24-excerpt classical Persian poetry pilot**
+(48 main questions plus 48 controls).
 Related general questions are batched; poetry questions run individually. Raw
 responses are saved and answers are scored locally, without a runtime model judge.
-The general benchmark's historical Laya comparison is retained below.
+The general benchmark also includes a historical Laya comparison.
 
 The [latest classical-poetry run](#classical-meaning-and-application) scored
 **24/24 on meaning recognition and 24/24 on situation matching**. See the
@@ -12,23 +13,26 @@ The [latest classical-poetry run](#classical-meaning-and-application) scored
 
 ## General Persian performance
 
-Both runs used **dataset v1.0.0**, identical inputs and scoring:
+All four runs used **dataset v1.0.0**, identical inputs and scoring:
 **624/624 valid answers across 106 requests each; no failures.** Main metrics
 exclude diagnostics.
 
 - **Jev:** `jev-1.13.0`, TypeSafe API via `typesafe-sdk==0.7.1`, 2026-09-22 UTC.
+- **Jeff:** Qwen3.5 **0.8B and 2B**, official MLX backend on an Apple M4 with
+  16 GB unified memory, BF16 without quantization, 2026-09-28 UTC. Checkpoints,
+  runtime versions, and reproduction instructions are in [the Jeff guide](docs/jeff.md).
 - **Laya:** [`convaiinnovations/laya-multilingual`](https://huggingface.co/convaiinnovations/laya-multilingual/tree/e4e9ddf21a7b1903b7acffd8814ad4307bf63a67),
   official `laya==0.3.20` / PyTorch 2.14.0, 2026-09-25 UTC. Ran offline on an
   Apple M4 CPU in fp32, using the checkpoint's default settings.
 
-| Metric | Jev | Laya multilingual |
-|---|---:|---:|
-| Choice accuracy (exact option) | **239/240 · 99.6%** | **141/240 · 58.75%** |
-| Noul accuracy (yes when p ≥ 0.5) | **159/160 · 99.4%** | **102/160 · 63.75%** |
-| Score within ±0.5 rubric levels | **76/80 · 95.0%** | **28/80 · 35.0%** |
-| Choice Brier ↓ | 0.0112 | 0.5995 |
-| Noul Brier ↓ | 0.0120 | 0.2823 |
-| Score MAE, rubric levels ↓ | 0.0709 | 0.7238 |
+| Metric | Jev | Jeff 0.8B | Jeff 2B | Laya multilingual |
+|---|---:|---:|---:|---:|
+| Choice accuracy (exact option) | **239/240 · 99.6%** | 206/240 · 85.8% | 224/240 · 93.3% | 141/240 · 58.75% |
+| Noul accuracy (yes when p ≥ 0.5) | **159/160 · 99.4%** | 135/160 · 84.4% | 144/160 · 90.0% | 102/160 · 63.75% |
+| Score within ±0.5 rubric levels | **76/80 · 95.0%** | 59/80 · 73.8% | 67/80 · 83.8% | 28/80 · 35.0% |
+| Choice Brier ↓ | **0.0112** | 0.1927 | 0.1069 | 0.5995 |
+| Noul Brier ↓ | **0.0120** | 0.1056 | 0.0798 | 0.2823 |
+| Score MAE, rubric levels ↓ | **0.0709** | 0.4036 | 0.2794 | 0.7238 |
 
 Choice Brier sums over classes (range 0–2); binary Noul Brier ranges from 0–1.
 
@@ -36,11 +40,11 @@ Jev category breakdown:
 
 ![Jev main success rates and Score error by category](docs/plots/performance.png)
 
-| Diagnostic | Jev | Laya multilingual |
-|---|---|---|
-| Matched pairs: both answers correct | 24/24 invariant; 24/24 contrast | 14/24 invariant; 16/24 contrast |
-| English instructions | 0/48 decisions changed; all 48 correct | 18/48 decisions changed; no success-rate improvement |
-| Repeatability (48 three-observation groups) | No decision changes | No decision changes |
+| Diagnostic | Jev | Jeff 0.8B | Jeff 2B | Laya multilingual |
+|---|---|---|---|---|
+| Matched pairs: both answers correct | 24/24 invariant; 24/24 contrast | 20/24 invariant; 22/24 contrast | 24/24 invariant; 24/24 contrast | 14/24 invariant; 16/24 contrast |
+| English instructions: decisions changed | 0/48 | 4/48 | 7/48 | 18/48 |
+| Repeatability (48 three-observation groups) | No decision changes | No decision changes | No decision changes | No decision changes |
 
 Jev's six errors concerned exclusive availability, permissions, unrecorded consent,
 and a cosmetic button change. Laya was strongest on intent Choice questions
@@ -50,6 +54,30 @@ Laya's 106 calls took **12.27 seconds total; 114 ms median**, after a **5.85-sec
 model load**. Local inference incurred no API charges; hardware and electricity
 costs were not measured. These are single-run observations, not a controlled
 hardware comparison with Jev's hosted API.
+
+## Jeff on Apple Silicon
+
+[Jeff](https://github.com/firelex/jeff) 2B improved on 0.8B across the three general
+Persian metrics, but remained below Jev. Neither Jeff model performed well on the
+larger literary question bank:
+
+| Task | Jeff 0.8B | Jeff 2B | Jev (historical) |
+|---|---:|---:|---:|
+| Literary question bank | 120/560 · 21.4% | 154/560 · 27.5% | 283/557 · 50.8% |
+| Classical meaning recognition | 21/24 · 87.5% | 20/24 · 83.3% | 24/24 · 100% |
+| Classical situation matching | 18/24 · 75.0% | 20/24 · 83.3% | 24/24 · 100% |
+
+The literary bank has a 25% uniform-random and 31.6% majority-label baseline.
+Jev returned three invalid answers; on the 557 questions valid for all models,
+Jeff scored 120/557 (21.5%) and 154/557 (27.6%). This extracted question bank has
+documented OCR and answer-key limitations; see its [review](data/poetry/REVIEW.md).
+
+Each Jeff model completed **1,280/1,280 valid evaluations across 762 requests**:
+624 general (including diagnostics), 560 literary, and 96 classical (including
+controls). The 32 smoke questions per model are separate from these totals.
+General-request medians were **386 ms for 0.8B** and **942 ms for 2B**; local calls
+incurred no API charges. These single-run timings exclude model loading and are
+not controlled hardware comparisons. See [setup, controls, and full timing results](docs/jeff.md).
 
 ## Jev API cost and speed
 
@@ -103,7 +131,7 @@ charge differently. Formula: `(input tokens × input rate + output tokens × out
 has three Choice questions (select an option), two Noul questions (probability of
 “yes”), and one Score question (a probability-weighted position on three rubric
 levels). Every question has a fixed expected answer and a brief rationale; these
-are stored separately and never sent to either model.
+are stored separately and never sent to a model.
 
 Each of the ten categories has **eight scenarios / 48 questions**:
 
@@ -313,7 +341,18 @@ The official Laya run used a separate Python runner with the same dataset and
 scorer. Its local artifacts are in `results/laya-official-full-v1/`, including
 `benchmark.py`, pinned `requirements.txt`, checkpoint metadata, and raw responses.
 
-**Verified:** 106 tests, Ruff, and byte-for-byte dataset and offline report reproduction.
+For an unauthenticated local Jeff server, use the same runner with an explicit
+model and loopback URL; no TypeSafe API key is needed:
+
+```sh
+uv run jev-benchmark run --local-url http://127.0.0.1:8765 --model jeff-qwen3.5-2b --suite smoke --output results/jeff-2b-smoke
+```
+
+The local URL is an API root, without `/v1`. Local runs ignore cloud credentials,
+`TYPESAFE_BASE_URL`, and HTTP proxy environment settings. Follow the
+[Jeff guide](docs/jeff.md) to install the model and run all three datasets.
+
+**Verified:** 125 tests, Ruff, and byte-for-byte dataset and offline report reproduction.
 Tests: `uv run pytest -q`. Regenerate plots:
 `uv run scripts/plot_results.py --run results/full-v1` (temporary Matplotlib dependency).
 
@@ -325,13 +364,20 @@ Laya multilingual ran fully offline, with substantially lower accuracy on the
 same questions, especially Score rubrics. These results apply to this checkpoint
 and dataset.
 
+Jeff 2B offered substantially better general Persian accuracy than Laya and
+Jeff 0.8B, while taking longer per general request than 0.8B. Both Jeff models
+struggled with the literary question bank, and neither matched Jev on the
+classical pilot. The larger model did not improve every task: its classical
+meaning-recognition score was one answer lower than 0.8B's.
+
 On the classical-poetry pilot, Jev identified the selected meanings and matched
 them to modern situations in all 24 excerpts. Removing the passage reduced
 situation-matching accuracy to 25%. This supports use of the supplied verses on
 these examples, not comprehensive or representative literary understanding.
 
-The dataset is synthetic, explicitly cued, and authored/reviewed by one model;
-related questions are correlated. Treat this as a useful baseline, then validate
+The general and classical datasets are authored/reviewed by one model; the
+literary bank retains extraction and unverified-key limitations. Related
+questions are correlated. Treat these as useful baselines, then validate
 on independently annotated, natural Persian requests before relying on it.
 
 ## Author

@@ -12,14 +12,20 @@ from .runner import plan_jobs, run
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="General Persian and literary benchmarks for Jev")
+    parser = argparse.ArgumentParser(
+        description="General Persian and literary benchmarks for Jev and local compatible models"
+    )
     commands = parser.add_subparsers(dest="command", required=True)
     validate = commands.add_parser("validate", help="Validate all frozen datasets and diagnostics")
     validate.add_argument("--data", type=Path, default=Path("data"))
     execute = commands.add_parser("run", help="Run the selected dataset's smoke or full evaluation")
     execute.add_argument("--data", type=Path, default=Path("data"))
     execute.add_argument("--suite", choices=["smoke", "full"], default="smoke")
-    execute.add_argument("--model", default="jev-1.13.0")
+    execute.add_argument("--model", help="Model ID (default: jev-1.13.0 for hosted runs)")
+    execute.add_argument(
+        "--local-url",
+        help="Unauthenticated loopback API root, e.g. http://127.0.0.1:8765; requires --model",
+    )
     execute.add_argument("--output", type=Path)
     report = commands.add_parser("report", help="Rebuild a report offline from a saved run")
     report.add_argument("directory", type=Path)
@@ -51,13 +57,16 @@ def main(argv=None):
             )
             return 0
         if args.command == "run":
+            if args.local_url is not None and args.model is None:
+                raise ValueError("--local-url requires --model with the server's exact model ID")
+            model = args.model if args.model is not None else "jev-1.13.0"
             data = load_dataset(args.data)
-            if not args.model.strip():
+            if not model.strip():
                 raise ValueError("Model ID must not be empty")
             output = args.output or Path("results") / (
                 datetime.now(UTC).strftime("%Y%m%dT%H%M%S%fZ") + "-" + args.suite
             )
-            run(data, output, args.suite, args.model)
+            run(data, output, args.suite, model, local_url=args.local_url)
         else:
             output = args.directory
         summary = build_report(output)
