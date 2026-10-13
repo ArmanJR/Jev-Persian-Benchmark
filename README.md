@@ -1,19 +1,19 @@
 # Jev Persian Benchmark
 
-Benchmarks for **Jev and Jeff** on **480 authored general Persian questions**,
+Benchmarks for **Jev, Jeff, and Mizan** on **480 authored general Persian questions**,
 **560 literary questions**, and a **24-excerpt classical Persian poetry pilot**
 (48 main questions plus 48 controls).
 Related general questions are batched; poetry questions run individually. Raw
 responses are saved and answers are scored locally, without a runtime model judge.
 The general benchmark also includes a historical Laya comparison.
 
-The [latest classical-poetry run](#classical-meaning-and-application) scored
+The [Jev classical-poetry run](#classical-meaning-and-application) scored
 **24/24 on meaning recognition and 24/24 on situation matching**. See the
 [worked examples and run results](docs/classical-poetry.md) for exactly what Jev received and selected.
 
 ## General Persian performance
 
-All four runs used **dataset v1.0.0**, identical inputs and scoring:
+All five runs used **dataset v1.0.0**, identical inputs and scoring:
 **624/624 valid answers across 106 requests each; no failures.** Main metrics
 exclude diagnostics.
 
@@ -21,18 +21,21 @@ exclude diagnostics.
 - **Jeff:** Qwen3.5 **0.8B and 2B**, official MLX backend on an Apple M4 with
   16 GB unified memory, BF16 without quantization, 2026-09-28 UTC. Checkpoints,
   runtime versions, and reproduction instructions are in [the Jeff guide](docs/jeff.md).
+- **Mizan:** `Nimruz/Mizan-v3-3B`, publisher Q8_0 GGUF on an Apple M4 with
+  16 GB unified memory, llama.cpp b11600 with Metal, 2026-10-13 UTC. See
+  [the Mizan guide](docs/mizan.md) for the pinned checkpoint and reproduction.
 - **Laya:** [`convaiinnovations/laya-multilingual`](https://huggingface.co/convaiinnovations/laya-multilingual/tree/e4e9ddf21a7b1903b7acffd8814ad4307bf63a67),
   official `laya==0.3.20` / PyTorch 2.14.0, 2026-09-25 UTC. Ran offline on an
   Apple M4 CPU in fp32, using the checkpoint's default settings.
 
-| Metric | Jev | Jeff 0.8B | Jeff 2B | Laya multilingual |
-|---|---:|---:|---:|---:|
-| Choice accuracy (exact option) | **239/240 · 99.6%** | 206/240 · 85.8% | 224/240 · 93.3% | 141/240 · 58.75% |
-| Noul accuracy (yes when p ≥ 0.5) | **159/160 · 99.4%** | 135/160 · 84.4% | 144/160 · 90.0% | 102/160 · 63.75% |
-| Score within ±0.5 rubric levels | **76/80 · 95.0%** | 59/80 · 73.8% | 67/80 · 83.8% | 28/80 · 35.0% |
-| Choice Brier ↓ | **0.0112** | 0.1927 | 0.1069 | 0.5995 |
-| Noul Brier ↓ | **0.0120** | 0.1056 | 0.0798 | 0.2823 |
-| Score MAE, rubric levels ↓ | **0.0709** | 0.4036 | 0.2794 | 0.7238 |
+| Metric | Jev | Jeff 0.8B | Jeff 2B | Mizan v3 Q8 | Laya multilingual |
+|---|---:|---:|---:|---:|---:|
+| Choice accuracy (exact option) | **239/240 · 99.6%** | 206/240 · 85.8% | 224/240 · 93.3% | 233/240 · 97.1% | 141/240 · 58.75% |
+| Noul accuracy (yes when p ≥ 0.5) | **159/160 · 99.4%** | 135/160 · 84.4% | 144/160 · 90.0% | 158/160 · 98.8% | 102/160 · 63.75% |
+| Score within ±0.5 rubric levels | 76/80 · 95.0% | 59/80 · 73.8% | 67/80 · 83.8% | **80/80 · 100%** | 28/80 · 35.0% |
+| Choice Brier ↓ | **0.0112** | 0.1927 | 0.1069 | 0.0441 | 0.5995 |
+| Noul Brier ↓ | 0.0120 | 0.1056 | 0.0798 | **0.0090** | 0.2823 |
+| Score MAE, rubric levels ↓ | 0.0709 | 0.4036 | 0.2794 | **0.0396** | 0.7238 |
 
 Choice Brier sums over classes (range 0–2); binary Noul Brier ranges from 0–1.
 
@@ -40,11 +43,11 @@ Jev category breakdown:
 
 ![Jev main success rates and Score error by category](docs/plots/performance.png)
 
-| Diagnostic | Jev | Jeff 0.8B | Jeff 2B | Laya multilingual |
-|---|---|---|---|---|
-| Matched pairs: both answers correct | 24/24 invariant; 24/24 contrast | 20/24 invariant; 22/24 contrast | 24/24 invariant; 24/24 contrast | 14/24 invariant; 16/24 contrast |
-| English instructions: decisions changed | 0/48 | 4/48 | 7/48 | 18/48 |
-| Repeatability (48 three-observation groups) | No decision changes | No decision changes | No decision changes | No decision changes |
+| Diagnostic | Jev | Jeff 0.8B | Jeff 2B | Mizan v3 Q8 | Laya multilingual |
+|---|---|---|---|---|---|
+| Matched pairs: both answers correct | 24/24 invariant; 24/24 contrast | 20/24 invariant; 22/24 contrast | 24/24 invariant; 24/24 contrast | 24/24 invariant; 23/24 contrast | 14/24 invariant; 16/24 contrast |
+| English instructions: decisions changed | 0/48 | 4/48 | 7/48 | 1/48 | 18/48 |
+| Repeatability (48 three-observation groups) | No decision changes | No decision changes | No decision changes | No decision changes | No decision changes |
 
 Jev's six errors concerned exclusive availability, permissions, unrecorded consent,
 and a cosmetic button change. Laya was strongest on intent Choice questions
@@ -54,6 +57,21 @@ Laya's 106 calls took **12.27 seconds total; 114 ms median**, after a **5.85-sec
 model load**. Local inference incurred no API charges; hardware and electricity
 costs were not measured. These are single-run observations, not a controlled
 hardware comparison with Jev's hosted API.
+
+## Mizan on Apple Silicon
+
+Mizan v3 Q8 completed **1,280/1,280 valid evaluations across 762 requests**, with
+no failures. It scored **158/560 (28.2%)** on the literary bank, below the 31.6%
+majority-label baseline. On the classical pilot it scored **21/24 on meaning**
+and **18/24 on situation matching**; supplied prose meanings raised matching to
+24/24, while removing the poem reduced it to 6/24.
+
+General-request time was **128.25 seconds total; 1.235 seconds median** on the
+Apple M4. These are single-run observations excluding model loading, not a
+controlled hardware comparison. The [Mizan guide](docs/mizan.md) records full
+results, controls, limitations, and setup. Use its pinned llama.cpp **b11600**:
+initial runs with b11443 were excluded because of an upstream Metal inference
+bug affecting decision probabilities.
 
 ## Jeff on Apple Silicon
 
@@ -341,7 +359,7 @@ The official Laya run used a separate Python runner with the same dataset and
 scorer. Its local artifacts are in `results/laya-official-full-v1/`, including
 `benchmark.py`, pinned `requirements.txt`, checkpoint metadata, and raw responses.
 
-For an unauthenticated local Jeff server, use the same runner with an explicit
+For an unauthenticated local compatible server, use the same runner with an explicit
 model and loopback URL; no TypeSafe API key is needed:
 
 ```sh
@@ -350,7 +368,8 @@ uv run jev-benchmark run --local-url http://127.0.0.1:8765 --model jeff-qwen3.5-
 
 The local URL is an API root, without `/v1`. Local runs ignore cloud credentials,
 `TYPESAFE_BASE_URL`, and HTTP proxy environment settings. Follow the
-[Jeff guide](docs/jeff.md) to install the model and run all three datasets.
+[Jeff guide](docs/jeff.md) or [Mizan guide](docs/mizan.md) to install a model and run
+all three datasets.
 
 **Verified:** 125 tests, Ruff, and byte-for-byte dataset and offline report reproduction.
 Tests: `uv run pytest -q`. Regenerate plots:
@@ -369,6 +388,11 @@ Jeff 0.8B, while taking longer per general request than 0.8B. Both Jeff models
 struggled with the literary question bank, and neither matched Jev on the
 classical pilot. The larger model did not improve every task: its classical
 meaning-recognition score was one answer lower than 0.8B's.
+
+Mizan v3 Q8 exceeded both Jeff models on the general metrics and had the lowest
+Score MAE of the evaluated models. Jev retained the highest Choice and Noul
+accuracy. Mizan still made errors on idioms, semantic contradictions, and supplied
+severity rules, including one high-confidence incorrect Noul answer.
 
 On the classical-poetry pilot, Jev identified the selected meanings and matched
 them to modern situations in all 24 excerpts. Removing the passage reduced
